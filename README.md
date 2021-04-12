@@ -17,4 +17,5 @@
 * "final_assembly.fasta" File
 * .bam File
 * "Binning" Directory
+
 Recommend creating a symbolic link to the required input files and directories to save space.
