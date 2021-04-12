@@ -13,7 +13,7 @@
 * MetaMAG Bash Scripts
 * R Scripts
 * MG directories (must be one word)
-##### MG Directories containing:
+##### MG Directory containing:
 * "final_assembly.fasta" File
 * .bam File
 * "Binning" Directory
