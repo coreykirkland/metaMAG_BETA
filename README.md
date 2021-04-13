@@ -1,4 +1,5 @@
 # **MetaMAG**
+### Integrating three levels of metagenomic information structure
 
 ### **Dependencies:**
 * Prodigal
