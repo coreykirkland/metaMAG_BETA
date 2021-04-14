@@ -14,7 +14,7 @@
 ## Required Files/Directories:
 # Working directory where sample directories are located (LINK)
 # Sample directory (MG) 
-# Assembly file in MG (named final_assembly.fasta)
+# Assembly file in MG (named "$MG"_final_assembly.fasta)
 # BAM file in MG directory (named "$MG".bam)
 # SNV.R script in working directory (i.e. LINK)
 
@@ -51,7 +51,7 @@ inStrainDIR="$MetaMAG"/"$MG"_inStrain
 # inStrain            
 source activate inStrain
 
-inStrain profile "$LINK"/"$MG"/"$MG".bam "$LINK"/"$MG"/final_assembly.fasta -o "$inStrainDIR"/"$MG"_output.IS -p 20 -g "$MetaMAG"/"$MG"_prodigal/"$MG"_renamed.fna --skip_genome_wide --skip_plot_generation --debug --skip_mm_profiling
+inStrain profile "$LINK"/"$MG"/"$MG".bam "$LINK"/"$MG"/"$MG"_final_assembly.fasta -o "$inStrainDIR"/"$MG"_output.IS -p 20 -g "$MetaMAG"/"$MG"_prodigal/"$MG"_renamed.fna --skip_genome_wide --skip_plot_generation --debug --skip_mm_profiling
 
 # SNV per Gene and Gene Family:
 
