@@ -15,7 +15,7 @@
 ## Required Files/Directories:
 # Working directory where sample directories are located (LINK)
 # Sample directory (MG) 
-# Assembly file in MG (named final_assembly.fasta)
+# Assembly file in MG (named "$MG"_final_assembly.fasta)
 # BAM file in MG directory (named "$MG".bam)
 # prodigalgff2gtf.sh script in working directory (i.e. LINK)
 
@@ -47,7 +47,7 @@ mkdir "$MetaMAG"/"$MG"_prodigal/
 # prodigal <InputFile> <NucleotideOuput> <AminoAcidOutput> <GffOutput> -p meta 
 source activate prodigal
 
-prodigal -i "$LINK"/"$MG"/final_assembly.fasta -d "$MetaMAG"/"$MG"_prodigal/"$MG".fna -a "$MetaMAG"/"$MG"_prodigal/"$MG".faa -o "$MetaMAG"/"$MG"_prodigal/"$MG".gff -p meta -f gff
+prodigal -i "$LINK"/"$MG"/"$MG"_final_assembly.fasta -d "$MetaMAG"/"$MG"_prodigal/"$MG".fna -a "$MetaMAG"/"$MG"_prodigal/"$MG".faa -o "$MetaMAG"/"$MG"_prodigal/"$MG".gff -p meta -f gff
 
 grep ">" "$MetaMAG"/"$MG"_prodigal/"$MG".faa | wc -l > "$MetaMAG"/"$MG"_prodigal/"$MG"_gene_total.txt
 
@@ -58,7 +58,7 @@ grep ">" "$MetaMAG"/"$MG"_prodigal/"$MG".faa | wc -l > "$MetaMAG"/"$MG"_prodigal
 mkdir "$MetaMAG"/"$MG"_picard
 source activate picard
 
-java -Xms2g -Xmx32g -jar /opt/software/uoa/2019/spack/opt/spack/linux-centos7-x86_64/gcc-9.1.0/picard-2.19.0-uc3lvtta7rlpyv2lpvmq347bdrzhx76r/bin/picard.jar CollectAlignmentSummaryMetrics R="$LINK"/"$MG"/final_assembly.fasta I="$LINK"/"$MG"/"$MG".bam O="$LINK"/"$MG"/"$MG"_bam_stats.txt
+java -Xms2g -Xmx32g -jar /opt/software/uoa/2019/spack/opt/spack/linux-centos7-x86_64/gcc-9.1.0/picard-2.19.0-uc3lvtta7rlpyv2lpvmq347bdrzhx76r/bin/picard.jar CollectAlignmentSummaryMetrics R="$LINK"/"$MG"/"$MG"_final_assembly.fasta I="$LINK"/"$MG"/"$MG".bam O="$LINK"/"$MG"/"$MG"_bam_stats.txt
    
 # Identify duplicate reads
 # <BamInput> <BamOutput> \ METRICS_FILE=<File> (File to write duplication metrics to) \ MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=<File> (Max no. file handles to keep open when spilling read ends to disk) REMOVE_DUPLICATES=TRUE (TRUE = do not write duplicates to output file instead of writing them with appropriate flags set)
