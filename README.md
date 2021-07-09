@@ -29,7 +29,7 @@ Recommendation: Create a symbolic link to the required input files and directori
 
 ### **MetaMAG Scripts:**
 ##### MetaMAG Script 1:
-* Annotates metagenome assembly using - Prodigal.
+* Annotates metagenome assembly - Prodigal.
 * Alignment statistics and removes duplicates reads - Picard.
 * Identifies gene regions - HTSeq-Count.
 * Normalisation by Transcripts Per Million (TPM)
@@ -37,5 +37,19 @@ Recommendation: Create a symbolic link to the required input files and directori
 ##### MetaMAG Script 2:
 * Clusters amino acid sequences from all MGs into gene families (GFs) - MMseqs2.
 * MMseqs2 statistics.
-* Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster, and the percentage of a genes TPM within a GF. Also calculates the number of genes in each GF.
+* Calculates the number of genes in each GF.
+* Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG. 
 
+##### MetaMAG Script 3:
+* Calculates the percentage of reads for a GF (based on TPM values from "MetaMAG Script 2") in a given MG that belong to a MAG. 
+* Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG.
+
+##### MetaMAG Script 4:
+IN DEVELOPMENT
+
+##### MetaMAG Script 5:
+* Calculates strain-level population statistics (SNV, nucleotide diversity, and pNpS) for genes and averages for GFs.
+* Also includes script to combine gene statistics with MAGs.
+
+### **Additional Scripts:**
+* A Bash and R script to merge GFs with KO (Kegg Orthology) database assignment for functional annotation of the GFs. Requires output file from KofamScan.
