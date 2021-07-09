@@ -5,14 +5,14 @@
 #### 3) Strain-centric
 
 
-### **Dependencies: Conda Environments**
+## **Dependencies: Conda Environments**
 * PRODIGAL v2.6.3
 * Picard v2.25.0
 * HTSeq v0.13.5
 * Python v3.7.3 and Pandas v0.24.2
 * MMseqs2 v13.45111
 * inStrain v1.5.3
-### **Dependencies: R**
+## **Dependencies: R**
 * R v4.0.2
 * R Packages: tidyr, dplyr, ggplot2
 
