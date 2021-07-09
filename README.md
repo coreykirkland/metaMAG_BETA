@@ -46,7 +46,7 @@ Recommendation: Create a symbolic link to the required input files and directori
 
 ##### MetaMAG Script 3:
 * Calculates the percentage of reads for a GF (based on TPM values from "MetaMAG Script 2") in a given MG that belong to a MAG. 
-* Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG.
+* Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG and the percentage of these is calculated.
 
 ##### MetaMAG Script 4:
 IN DEVELOPMENT
