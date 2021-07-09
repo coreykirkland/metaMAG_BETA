@@ -1,8 +1,9 @@
 # **MetaMAG**
-### Integrating Three Levels of Metagenomic Analysis: 
-### 1) Genome-centric
-### 2) Gene-centric
-### 3) Strain-centric
+#### Integrating Three Levels of Metagenomic Analysis: 
+#### 1) Genome-centric
+#### 2) Gene-centric
+#### 3) Strain-centric
+
 
 ### **Dependencies: Conda Environments**
 * PRODIGAL v2.6.3
@@ -14,6 +15,7 @@
 ### **Dependencies: R**
 * R v4.0.2
 * R Packages: tidyr, dplyr, ggplot2
+
 
 ### **INPUT - MetaMAG Directory Structure:**
 ##### Working directory (where scripts are run) containing:
@@ -27,7 +29,9 @@
 
 Recommendation: Create a symbolic link to the required input files and directories to avoid moving files and save space.
 
+
 ### **MetaMAG Scripts:**
+
 ##### MetaMAG Script 1:
 * Annotates metagenome assembly - Prodigal.
 * Alignment statistics and removes duplicates reads - Picard.
@@ -50,6 +54,7 @@ IN DEVELOPMENT
 ##### MetaMAG Script 5:
 * Calculates strain-level population statistics (SNV, nucleotide diversity, and pNpS) for genes and averages for GFs.
 * Also includes script to combine gene statistics with MAGs.
+
 
 ### **Additional Scripts:**
 * A Bash and R script to merge GFs with KO (Kegg Orthology) database assignment for functional annotation of the GFs. Requires output file from KofamScan.
