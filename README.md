@@ -6,7 +6,7 @@
 
 
 ## **Dependencies: Conda Environments**
-* PRODIGAL v2.6.3
+* Prodigal v2.6.3
 * Picard v2.25.0
 * HTSeq v0.13.5
 * Python v3.7.3 and Pandas v0.24.2
