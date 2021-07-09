@@ -36,10 +36,10 @@ Recommendation: Create a symbolic link to the required input files and directori
 * Annotates metagenome assembly - Prodigal.
 * Alignment statistics and removes duplicates reads - Picard.
 * Identifies gene regions - HTSeq-Count.
-* Normalisation by Transcripts Per Million (TPM)
+* Normalises gene reads by Transcripts Per Million (TPM)
 
 ##### MetaMAG Script 2:
-* Clusters amino acid sequences from all MGs into gene families (GFs) - MMseqs2.
+* Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2.
 * MMseqs2 statistics.
 * Calculates the number of genes in each GF.
 * Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG. 
