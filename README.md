@@ -17,7 +17,7 @@
 * R Packages: tidyr, dplyr, ggplot2
 
 
-### **INPUT - MetaMAG Directory Structure:**
+## **INPUT - MetaMAG Directory Structure:**
 ##### Working directory (where scripts are run) containing:
 * MetaMAG Bash Scripts
 * R Scripts
@@ -30,7 +30,7 @@
 Recommendation: Create a symbolic link to the required input files and directories to avoid moving files and save space.
 
 
-### **MetaMAG Scripts:**
+## **MetaMAG Scripts:**
 
 ##### MetaMAG Script 1:
 * Annotates metagenome assembly - Prodigal.
