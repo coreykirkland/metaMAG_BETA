@@ -9,7 +9,7 @@
 * PRODIGAL v2.6.3
 * Picard v2.25.0
 * HTSeq v0.13.5
-* Pandas v0.24.2 and Python v3.7.3
+* Python v3.7.3 and Pandas v0.24.2
 * MMseqs2 v13.45111
 * inStrain v1.5.3
 ### **Dependencies: R**
