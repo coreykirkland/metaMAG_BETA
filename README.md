@@ -1,5 +1,5 @@
 # **MetaMAG**
-#### Integrating Three Levels of Metagenomic Analysis: 
+#### Integrating Three Levels of Metagenomic Information: 
 #### 1) Genome-centric
 #### 2) Gene-centric
 #### 3) Strain-centric
