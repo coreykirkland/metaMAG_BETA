@@ -56,5 +56,5 @@ IN DEVELOPMENT
 * Also includes script to combine gene statistics with MAGs.
 
 
-### **Additional Scripts:**
+## **Additional Scripts:**
 * A Bash and R script to merge GFs with KO (Kegg Orthology) database assignment for functional annotation of the GFs. Requires output file from KofamScan.
