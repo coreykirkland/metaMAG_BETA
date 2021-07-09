@@ -1,4 +1,4 @@
-# **MetaMAG**
+# **MetaMAG Pipeline**
 #### Integrating Three Levels of Metagenomic Information: 
 #### 1) Genome-centric
 #### 2) Gene-centric
