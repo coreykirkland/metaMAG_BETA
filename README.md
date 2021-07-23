@@ -23,9 +23,9 @@
 * R Scripts
 * Metagenome (MG) directories (must be one word - i.e. AcS1)
 ##### MG Directory containing:
-* "final_assembly.fasta" File
-* .bam File
-* "Binning" Directory
+* Assembly File - saved as "final_assembly.fasta"
+* BAM File - ending in ".bam"
+* PATH to "Binning" Directory
 
 Recommendation: Create a symbolic link to the required input files and directories to avoid moving files and save space.
 
