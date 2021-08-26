@@ -38,15 +38,16 @@ Recommendation: Create a symbolic link to the required input files and directori
 
 ##### Database creation module:
 Add text describing that for now we suggest the method described here e.g. Prodigal, HTSeq-Count, but other methods can be substituted as long as it end up with the same output format - which we will show here.
-* Annotates metagenome assembly - Prodigal.
-* Alignment statistics and removes duplicates reads - Picard.
-* Identifies gene regions - HTSeq-Count.
-* Normalises gene reads by Transcripts Per Million (TPM)
+* Calls genes in metagenome assembly - Prodigal.
+* Calculates alignment statistics and removes duplicate reads - Picard.
+* Counts number of reads aligning each gene - HTSeq-Count.
+* Normalises gene reads by Transcripts Per Million (TPM).
 ##### Usage: Corey, this would be the actual command the user would type into the terminal
 ```
 create_metaMAG_databases input_A input_B etc (threads option?)
 ```
 ##### Outputs:
+##### TPM_for_each_gene.tsv
 ```
 show a head -n5 of each of the output files that is produced here as input for later modules.
 ```
@@ -54,7 +55,7 @@ show a head -n5 of each of the output files that is produced here as input for l
 * Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. (maybe move this and the ko annotation to the database creation module). These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else)
 * MMseqs2 statistics.
 * Calculates the number of genes in each GF.
-* Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
+* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
 * Now integrates KO and calculates total TPM and percentages as above for each KO in a MG. SEE KO REQUIREMENTS.
 
 ##### MetaMAG Script 3 (name rather than number):
