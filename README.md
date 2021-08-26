@@ -36,34 +36,51 @@ Recommendation: Create a symbolic link to the required input files and directori
 
 ## **MetaMAG Modules:**
 
-##### Database creation module:
-Add text describing that for now we suggest the method described here e.g. Prodigal, HTSeq-Count, but other methods can be substituted as long as it end up with the same output format - which we will show here.
+##### Database_creation module:
+{Add text describing that for now we suggest the method described here e.g. Prodigal, HTSeq-Count, but other methods can be substituted as long as it end up with the same output format - which we will show here.}
 * Calls genes in metagenome assembly - Prodigal.
 * Calculates alignment statistics and removes duplicate reads - Picard.
 * Counts number of reads aligning each gene - HTSeq-Count.
 * Normalises gene reads by Transcripts Per Million (TPM).
-##### Usage: Corey, this would be the actual command the user would type into the terminal
+##### Usage: {Corey, this would be the actual command the user would type into the terminal}
 ```
 create_metaMAG_databases input_A input_B etc (threads option?)
 ```
 ##### Outputs:
 ##### TPM_for_each_gene.tsv
+ {Short description of the output file (1-2 sentence is fine) - this could go underneath the head, if you think that looks better?}
 ```
 show a head -n5 of each of the output files that is produced here as input for later modules.
 ```
-##### MetaMAG Script 2 (name rather than number):
-* Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. (maybe move this and the ko annotation to the database creation module). These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else)
+##### MetaMAG Script 2 {name rather than number}:
+* Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. {maybe move this and the ko annotation to the Database_creation module}. {These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else}
 * MMseqs2 statistics.
 * Calculates the number of genes in each GF.
-* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
+* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene {how is this different from the last dot in the Database_creation module}, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
 * Now integrates KO and calculates total TPM and percentages as above for each KO in a MG. SEE KO REQUIREMENTS.
 
-##### MetaMAG Script 3 (name rather than number):
+##### Usage:
+```
+Command to run this this script
+```
+##### Output:
+##### Descriptive_output_filename.tsv
+ {Short description of the output file (1-2 sentence is fine)}
+```
+head -n5 of this output file
+```
+##### Descriptive_output_filename2.tsv
+ {Short description of the second output file.}
+```
+head -n5 of this output file
+```
+
+##### MetaMAG Script 3 {name rather than number}:
 * Calculates the percentage of reads for a GF and for a KO (based on TPM values from "MetaMAG Script 2") that belong to a MAG in each MG. 
 * Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG and the percentage of these is calculated.
 
 ##### MetaMAG Script 4:
-Deprecated.
+Deprecated. {What do you mean here?}
 
 ##### MetaMAG Script 5:
 * Calculates strain-level population statistics (SNV, nucleotide diversity, and pNpS) for genes and averages for GFs.
