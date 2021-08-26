@@ -43,10 +43,13 @@ Add text describing that for now we suggest the method described here e.g. Prodi
 * Identifies gene regions - HTSeq-Count.
 * Normalises gene reads by Transcripts Per Million (TPM)
 Usage: Corey, this would be the actual command the user would type into the terminal
-> create_metaMAG_databases input_A input_B etc (threads option?)
+```
+create_metaMAG_databases input_A input_B etc (threads option?)
+```
 Outputs:
-> show a head -n5 of each of the output files that is produced here as input for later modules.
-
+```
+show a head -n5 of each of the output files that is produced here as input for later modules.
+```
 ##### MetaMAG Script 2 (name rather than number):
 * Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. (maybe move this and the ko annotation to the database creation module). These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else)
 * MMseqs2 statistics.
