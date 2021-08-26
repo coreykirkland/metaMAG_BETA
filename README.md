@@ -42,11 +42,11 @@ Add text describing that for now we suggest the method described here e.g. Prodi
 * Alignment statistics and removes duplicates reads - Picard.
 * Identifies gene regions - HTSeq-Count.
 * Normalises gene reads by Transcripts Per Million (TPM)
-###### Usage: Corey, this would be the actual command the user would type into the terminal
+##### Usage: Corey, this would be the actual command the user would type into the terminal
 ```
 create_metaMAG_databases input_A input_B etc (threads option?)
 ```
-Outputs:
+##### Outputs:
 ```
 show a head -n5 of each of the output files that is produced here as input for later modules.
 ```
