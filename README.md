@@ -49,7 +49,7 @@ Recommendation: Create a symbolic link to the required input files and directori
 * Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG and the percentage of these is calculated.
 
 ##### MetaMAG Script 4:
-IN DEVELOPMENT
+Deprecated.
 
 ##### MetaMAG Script 5:
 * Calculates strain-level population statistics (SNV, nucleotide diversity, and pNpS) for genes and averages for GFs.
