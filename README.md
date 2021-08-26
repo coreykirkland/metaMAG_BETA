@@ -42,7 +42,8 @@ Recommendation: Create a symbolic link to the required input files and directori
 * Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2.
 * MMseqs2 statistics.
 * Calculates the number of genes in each GF.
-* Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG. 
+* Calculates TPM for each annotated gene, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
+* Now integrates KO and calculates as above for KO in a MG. 
 
 ##### MetaMAG Script 3:
 * Calculates the percentage of reads for a GF and for a KO (based on TPM values from "MetaMAG Script 2") in a given MG that belong to a MAG. 
