@@ -88,6 +88,14 @@ Rscript "$LINK"/GF_TPM.R "$LINK"/MetaMAG/Combined_MetaMAG_tpm.tsv "$LINK"/MetaMA
 
 # Output: TotalTPM.tsv GeneTPM.tsv ClusterCount.tsv PercentTPM.tsv
 
+## Additional Script: Percent TPM per KO
+
+TPMOutput="$LINK"/MetaMAG/
+
+module load r-4.0.2
+
+Rscript "$LINK"/PercentKO.R "$LINK"/MetaMAG/PercentTPM.tsv "$LINK"/Kofam_Scan_AllGFs/test_cluster_repseq.faa.kofam_grep_K "$TPMOutput"
+
 ## END OF PART 2 ##
 
 ###########################################

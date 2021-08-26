@@ -10,7 +10,7 @@
 #SBATCH --array=1-24
 
 
-### MetaMAG Script (If Bam Files Created) Updated: 09/07/21 ###
+### MetaMAG Script (If Bam Files Created) Updated: 26/08/21 ###
 
 ## Required Files/Directories:
 # Working directory where sample directories are located (LINK)
@@ -70,9 +70,9 @@ MAGOutput="$MetaMAG"/"$MG"_
 
 module load r-4.0.2
 
-Rscript "$LINK"/GF_MAGs.R "$MetaMAG"/"$MG"_MAG_Table.tsv "$MetaMAG"/"$MG"_MAG_Table_Updated.tsv "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv "$MAGOutput"
+Rscript "$LINK"/MAGs.R "$MetaMAG"/"$MG"_MAG_Table.tsv "$MetaMAG"/"$MG"_MAG_Table_Updated.tsv "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv "$MAGOutput"
 
-# Outputs: MAGPercent2.tsv WideMAGPercent.tsv MergedMAG.tsv
+# Outputs: MAGPercentGF.tsv MAGPercentKO.tsv MergedMAG.tsv MAGPercent.tsv
 
 ## END OF PART 3 ##
 
