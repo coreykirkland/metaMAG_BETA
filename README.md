@@ -1,4 +1,4 @@
-# **MetaMAG**
+# **MetaMAG** {at the moment your shell scripts still have the slurm settings in them. In fact, it's set to email you everytime someone uses the scripts! You'll need to generalise them, allowing the user to call the input files as arguments} 
 {We should eventually provide a longer introduction describing what the tool is for (text from the paper can be used here) and a diagram describing the tool would be nice too would be nice too.}
 #### Integrating Three Levels of Metagenomic Information: 
 #### 1) Genome-centric
