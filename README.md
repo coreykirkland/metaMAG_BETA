@@ -1,5 +1,5 @@
 # **MetaMAG**
-We should eventually provide a longer introduction describing what the tool is for (text from the paper can be used here) and a diagram describing the tool would be nice too would be nice too.
+{We should eventually provide a longer introduction describing what the tool is for (text from the paper can be used here) and a diagram describing the tool would be nice too would be nice too.}
 #### Integrating Three Levels of Metagenomic Information: 
 #### 1) Genome-centric
 #### 2) Gene-centric
