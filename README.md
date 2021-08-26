@@ -56,8 +56,10 @@ show a head -n5 of each of the output files that is produced here as input for l
 * Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. {maybe move this and the ko annotation to the Database_creation module}. {These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else}
 * MMseqs2 statistics.
 * Calculates the number of genes in each GF.
-* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene {how is this different from the last dot in the Database_creation module}, the total TPM of the genes in a GF/Cluster for a given MG, and the percentage of a genes TPM out of the total TPM for a GF in a given MG.
-* Now integrates KO and calculates total TPM and percentages as above for each KO in a MG. SEE KO REQUIREMENTS.
+* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene {how is this different from the last dot in the Database_creation module}, 
+* Calculates the total TPM of the genes in a GF/Cluster for a given MG
+* Calculates the percentage of a genes TPM out of the total TPM for a GF in a given MG.
+* Integrates KEGG functional annotations and calculates total TPM and percentages for each KO in a given MG. SEE KO REQUIREMENTS.
 
 ##### Usage:
 ```
