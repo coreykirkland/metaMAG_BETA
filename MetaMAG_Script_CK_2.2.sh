@@ -77,24 +77,15 @@ awk -F "\t" '{print $2,$1}' OFS="\t" "$LINK"/MetaMAG/mmseqs2/cluster1.tsv > "$LI
 
 ###########################################
 
-# Merge .tpm and cluster2.tsv files - to get TPM per GF/Cluster. Now includes script to calculate number of genes in each GF/cluster.
-# Rscript: saved as TPM_GF.R 
-# Now calculates for all GFs.
-TPMOutput="$LINK"/MetaMAG/
-
-module load r-4.0.2
-
-Rscript "$LINK"/GF_TPM.R "$LINK"/MetaMAG/Combined_MetaMAG_tpm.tsv "$LINK"/MetaMAG/mmseqs2/allMG_AA_cluster.tsv "$TPMOutput"
-
-# Output: TotalTPM.tsv GeneTPM.tsv ClusterCount.tsv PercentTPM.tsv
-
-## Additional Script: Percent TPM per KO
+# Intergrates all GFs and Kegg Orthology (KO) k numbers into TPM data: 
 
 TPMOutput="$LINK"/MetaMAG/
 
 module load r-4.0.2
 
-Rscript "$LINK"/PercentKO.R "$LINK"/MetaMAG/PercentTPM.tsv "$LINK"/Kofam_Scan_AllGFs/test_cluster_repseq.faa.kofam_grep_K "$TPMOutput"
+Rscript "$LINK"/TPM.R "$LINK"/MetaMAG/Combined_MetaMAG_tpm.tsv "$LINK"/MetaMAG/mmseqs2/allMG_AA_cluster.tsv "$LINK"/Kofam_Scan_AllGFs/test_cluster_repseq.faa.kofam_grep_K "$TPMOutput"
+
+# Output Files: ClusterCount.tsv GeneTPM.tsv TotalTPM.tsv PercentTPM.tsv
 
 ## END OF PART 2 ##
 

@@ -10,7 +10,7 @@
 #SBATCH --array=1-24
 
 
-### MetaMAG Script (If Bam Files Created) Updated: 26/08/21 ###
+### MetaMAG Script (If Bam Files Created) Updated: 09/09/21 ###
 
 ## Required Files/Directories:
 # Working directory where sample directories are located (LINK)
@@ -62,15 +62,15 @@ grep '>' "$MetaMAG"/"$MG"_Renamed_Bin/"$MG"_combined_bin.fa | sed "s/>//" > "$Me
 # Modify GFF files and create table
 grep -v "#" "$MetaMAG"/"$MG"_prodigal/"$MG".gff | cut -f 1,9 | sed "s/;/\t/" | sed "s/_/\t/2" | cut -f 1,3 | sed "s/ID=//" > "$MetaMAG"/"$MG"_MAG_Table_Updated.tsv
 
-# Modify PercentTPM table:
-awk -v awkvar="$MG" '$1 == awkvar' "$LINK"/MetaMAG/PercentTPM.tsv > "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv
+# Filter PercentTPM table by MG:
+awk -v awkvar="$MG" '$3 == awkvar' "$LINK"/MetaMAG/PercentTPM.tsv > "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv
 
 # RScript: Merge MAG_Table.tsv, MAG_Table_Updated.tsv, and PercentTPM.tsv
 MAGOutput="$MetaMAG"/"$MG"_
 
 module load r-4.0.2
 
-Rscript "$LINK"/MAGs.R "$MetaMAG"/"$MG"_MAG_Table.tsv "$MetaMAG"/"$MG"_MAG_Table_Updated.tsv "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv "$MAGOutput"
+Rscript "$LINK"/MAGPercent.R "$MetaMAG"/"$MG"_MAG_Table.tsv "$MetaMAG"/"$MG"_MAG_Table_Updated.tsv "$LINK"/MetaMAG/"$MG"_PercentTPM.tsv "$MAGOutput"
 
 # Outputs: MAGPercentGF.tsv MAGPercentKO.tsv MergedMAG.tsv MAGPercent.tsv
 
