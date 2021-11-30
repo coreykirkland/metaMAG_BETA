@@ -1,12 +1,11 @@
-# **MetaMAG** {at the moment your shell scripts still have the maxwell slurm settings (#SBATCH) and links to maxwell files. In fact, it's set to email you everytime someone uses the scripts! You'll need to generalise them, allowing the user to call the input files as arguments. I don't think you need to worry about memory settings, but you should set the number of threads to use in programmes, such as mmseqs, as an argument} 
-{We should eventually provide a longer introduction describing what the tool is for (text from the paper can be used here) and a diagram describing the tool would be nice too would be nice too.}
+# **MetaMAG**
 #### Integrating Three Levels of Metagenomic Information: 
-#### 1) Genome-centric
-#### 2) Gene-centric
-#### 3) Strain-centric
+#### 1) Gene-centric level
+#### 2) Genome-centric level
+#### 3) Strain-centric level
 
 
-## **Dependencies: Conda Environments**
+## **Dependencies:**
 * Prodigal v2.6.3
 * Picard v2.25.0
 * HTSeq v0.13.5
@@ -18,53 +17,57 @@
 * R Packages: tidyr, dplyr, ggplot2
 
 
-## **INPUT - MetaMAG Directory Structure:**
-##### Working directory (where scripts are run) containing:
-* MetaMAG Bash Scripts
-* R Scripts
-* Metagenome (MG) directories (must be one word - e.g. AcS1)
-##### MG Directory containing:
-* Assembly File - saved as "final_assembly.fasta"
-* BAM File - ending in ".bam"
-* PATH to "Binning" Directory
+## **Required Input Files:**
+* Contig file (.fasta) for each metagenome (MG).
+* Alignment/mapping file (.bam) for each MG.
+* Name of directory containing all bin files (.fasta) for each MG.
+(Diagram of required input files)
 
-Recommendation: Create a symbolic link to the required input files and directories to avoid moving files and save space.
-
-##### KO Requirements:
-* Use representative cluster sequences (fasta file created from MMseqs2) to functionally annotate gene families (GFs) using Kofam_Scan.
-* Kofam_Scan output required to calculate KO total TPM and KO percentages in "MetaMAG Script 2" and to integrate this data with MAGs in "MetaMAG Script 3".
 
 ## **MetaMAG Modules:**
 
-##### Database_creation module:
-{Add text describing that for now we suggest the method described here e.g. Prodigal, HTSeq-Count, but other methods can be substituted as long as it end up with the same output format - which we will show here.}
+(Diagram of modules and how to run - modules must be run in the correct order)
+
+##### 1. metaMAG_setup module:
 * Calls genes in metagenome assembly - Prodigal.
 * Calculates alignment statistics and removes duplicate reads - Picard.
-* Counts number of reads aligning each gene - HTSeq-Count.
+* Counts the number of reads aligned to each gene - HTSeq-Count.
 * Normalises gene reads by Transcripts Per Million (TPM).
-##### Usage: {Corey, this would be the actual command the user would type into the terminal}
-```
-create_metaMAG_databases input_A input_B etc (threads option?)
-```
-##### Outputs:
-##### TPM_for_each_gene.tsv
- {Short description of the output file (1-2 sentence is fine) - this could go underneath the head, if you think that looks better?}
-```
-show a head -n5 of each of the output files that is produced here as input for later modules.
-```
-##### MetaMAG Script 2 {name rather than number}:
-* Clusters amino acid sequences from all MGs into gene families (GFs) / clusters - MMseqs2. {maybe move this and the ko annotation to the Database_creation module}. {These are all quite modular up to this point, right? e.g. if I wanted to I could do the clustering with something else or annotate with something else}
-* MMseqs2 statistics.
-* Calculates the number of genes in each GF.
-* Calculates TPM for each annotated {by annotated do you mean, called gene? Annotated could be thought to mean functional annotation} gene {how is this different from the last dot in the Database_creation module}, 
-* Calculates the total TPM of the genes in a GF/Cluster for a given MG
-* Calculates the percentage of a genes TPM out of the total TPM for a GF in a given MG.
-* Integrates KEGG functional annotations and calculates total TPM and percentages for each KO in a given MG. SEE KO REQUIREMENTS.
 
 ##### Usage:
 ```
-Command to run this this script
+sh metaMAG_setup.sh -m <Metagenome Name> -c <Contigs File> -a <Alignment File> -j <PATH to Java> -o <Output Directory>
 ```
+metaMAG Module: metaMAG_setup.sh
+-m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1)
+-c: Contigs file from assembly step (.fa or .fasta)
+-a Alignment/mapping file (.bam)
+-j PATH to Java (required to Picard).
+-o: Output directory (this is where a folder called “metaMAG” will be created and contain all output files for all modules).
+Note: All arguments required to successfully run the module.
+
+##### Outputs:
+##### TPM_for_each_gene.tsv
+ {Short description of the output file (1-2 sentence is fine)}
+```
+show a head -n5 of each of the output files that is produced here as input for later modules.
+```
+(Run all MGs with this script before moving on).
+
+##### 2. metaMAG_cluster module:
+* Clusters amino acid sequences from all MGs into protein families - MMseqs2.
+* Calculates MMseqs2 statistics - R script.
+
+##### Usage:
+```
+sh metaMAG_cluster.sh -m <Metagenome Name> -t <No. of Threads> -o <Output Directory>
+```
+metaMAG Module: metaMAG_cluster.sh
+-m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).
+-t: Number of threads for MMseqs2 program.
+-o: Output directory (must be the same as used in previous module).
+Note: All arguments required to successfully run the module.
+
 ##### Output:
 ##### Descriptive_output_filename.tsv
  {Short description of the output file (1-2 sentence is fine)}
@@ -77,18 +80,77 @@ head -n5 of this output file
 head -n5 of this output file
 ```
 
-##### MetaMAG Script 3 {name rather than number}:
-* Calculates the percentage of reads for a GF and for a KO (based on TPM values from "MetaMAG Script 2") that belong to a MAG in each MG. 
-* Reads which are not assigned to a MAG are referred to as "Unbinned" for each GF in each MG and the percentage of these is calculated.
 
-##### MetaMAG Script 4:
-Deprecated. {What do you mean here?}
+##### 3. metaMAG_kofam module:
+* Functionally annotates the representative protein family sequences from the MMseqs2 output - Kofam Scan.
 
-##### MetaMAG Script 5:
-* Calculates strain-level population statistics (SNV, nucleotide diversity, and pNpS) for genes and averages for GFs.
-* Also includes script to combine gene statistics with MAGs.
+##### Usage:
+```
+sh metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
+```
+metaMAG module: metaMAG_kofam.sh
+-k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan)
+-p: Profile (required for Kofam Scan - see https://github.com/takaram/kofam_scan)
+-t: Number of threads.
+-o: Output directory (must be the same as used in previous module).
+
+##### Output:
+(Highlight the Kofam output file required for next module).
 
 
-## **Additional Scripts:**
-* No longer required??
-* A Bash and R script to merge GF percentages with KO (Kegg Orthology) database assignment for functional annotation of the GFs. Requires output file from KofamScan.
+
+##### 4. metaMAG_gene module:
+* Integrates gene family (GF) and KEGG Orthology (KO) with TPM data - R script (TPM.R).
+
+##### Usage:
+```
+sh metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
+```
+metaMAG module: metaMAG_gene.sh
+-m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).
+-k: Kofam output file (two column file containing name and KO k number)
+-o: Output directory (must be the same as used in previous module).
+
+##### Output:
+(Output files)
+
+
+##### 5. metaMAG_genome module:
+* Calculates 
+
+##### Usage:
+```
+sh metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Directory>
+```
+metaMAG module: metaMAG_genome.sh
+-m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).
+-b: Bin directory - PATH to directory containing .fa files from binning step. (More details needed).
+-o: Output directory (must be the same as used in previous module).
+
+##### Output:
+(Output files)
+
+
+##### 6. metaMAG_strain module:
+* Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
+* Calculates... - R script.
+* Optional module.
+
+##### Usage:
+```
+sh metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> -t <No. of Thread> -o <Output Directory>
+```
+metaMAG module: metaMAG_strain.sh
+-m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).
+-a: Alignment/mapping file (.bam; same as the file used in the metaMAG_setup module).
+-c: Contigs file (.fa/.fasta; same as the file used in the metaMAG_setup module).
+-t: Number of threads required for inStrain.
+-o: Output directory (must be the same as used in previous module).
+
+##### Output:
+(Output files)
+
+
+##### metaMAG Visualisation:
+(Scripts for visualisation of output data - e.g. heatmaps and barcharts).
+
