@@ -1,8 +1,8 @@
-# **MetaMAG**
+# **metaMAG**
 #### Integrating Three Levels of Metagenomic Information: 
-#### 1) Gene-centric level
-#### 2) Genome-centric level
-#### 3) Strain-centric level
+#### 1) Gene-centric
+#### 2) Genome-centric
+#### 3) Strain-centric
 
 
 ## **Dependencies:**
