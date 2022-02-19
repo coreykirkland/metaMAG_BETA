@@ -33,7 +33,7 @@
 * Calls genes in metagenome assembly - Prodigal.
 * Calculates alignment statistics and removes duplicate reads - Picard.
 * Counts the number of reads aligned to each gene - HTSeq-Count.
-* Normalises gene reads by Transcripts Per Million (TPM).
+* Normalises gene reads by Transcripts Per Million (TPM) - https://raw.githubusercontent.com/EnvGen/metagenomics-workshop/master/in-house/tpm_table.py
 
 ##### Usage:
 ```
