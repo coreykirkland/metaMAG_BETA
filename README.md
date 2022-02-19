@@ -150,6 +150,6 @@ sh metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> 
 (Output files)
 
 
-##### metaMAG Visualisation:
+##### metaMAG Visualisation:  
 (Scripts for visualisation of output data - e.g. heatmaps and barcharts).
 
