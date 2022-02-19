@@ -21,7 +21,7 @@
 * Contig file (.fasta) for each metagenome (MG).
 * Alignment/mapping file (.bam) for each MG.
 * Name of directory containing all bin files (.fasta) for each MG.
-(Diagram of required input files)
+
 
 
 ## **MetaMAG Modules:**
