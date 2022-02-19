@@ -25,7 +25,7 @@
 
 
 ## **MetaMAG Modules:**
-![pipeline_1](https://raw.githubusercontent.com/coreykirkland/metaMAG_test/ecb07cd6ac7227c05fc1e4e44284caa6dd96a69b/metaMAG.drawio(1).svg?token=ATTKRP4XDXXHVZHOFJKI4CDB73HEC)
+![pipeline_1]()
 
 ##### 1. metaMAG_setup module:
 * Calls genes in metagenome assembly - Prodigal.
