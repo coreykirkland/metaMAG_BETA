@@ -27,7 +27,9 @@
 ## **MetaMAG Modules:**
 ![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/435a268749c2a8f9fab12c7302aefce3bf1f6f2a/metaMAG.drawio(1).svg)
 
-##### 1. metaMAG_setup module:
+
+
+### 1. metaMAG_setup module:
 * Calls genes in metagenome assembly - Prodigal.
 * Calculates alignment statistics and removes duplicate reads - Picard.
 * Counts the number of reads aligned to each gene - HTSeq-Count.
@@ -53,7 +55,9 @@ show a head -n5 of each of the output files that is produced here as input for l
 ```
 (Run all MGs with this script before moving on).
 
-##### 2. metaMAG_cluster module:
+
+
+## 2. metaMAG_cluster module:
 * Clusters amino acid sequences from all MGs into protein families - MMseqs2.
 * Calculates MMseqs2 statistics - R script.
 
@@ -79,8 +83,7 @@ head -n5 of this output file
 head -n5 of this output file
 ```
 
-
-##### 3. metaMAG_kofam module:
+## 3. metaMAG_kofam module:
 * Functionally annotates the representative protein family sequences from the MMseqs2 output - Kofam Scan.
 
 ##### Usage:
@@ -98,7 +101,7 @@ sh metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Dir
 
 
 
-##### 4. metaMAG_gene module:
+## 4. metaMAG_gene module:
 * Integrates gene family (GF) and KEGG Orthology (KO) with TPM data - R script (TPM.R).
 
 ##### Usage:
@@ -114,7 +117,7 @@ sh metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
 (Output files)
 
 
-##### 5. metaMAG_genome module:
+## 5. metaMAG_genome module:
 * Calculates 
 
 ##### Usage:
@@ -130,7 +133,7 @@ sh metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Director
 (Output files)
 
 
-##### 6. metaMAG_strain module:
+## 6. metaMAG_strain module:
 * Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
 * Calculates... - R script.
 * Optional module.
@@ -150,6 +153,6 @@ sh metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> 
 (Output files)
 
 
-##### metaMAG Visualisation:  
+## metaMAG Visualisation:  
 (Scripts for visualisation of output data - e.g. heatmaps and barcharts).
 
