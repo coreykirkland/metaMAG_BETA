@@ -29,7 +29,7 @@
 
 
 
-### 1. metaMAG_setup module:
+## 1. metaMAG_setup module:
 * Calls genes in metagenome assembly - Prodigal.
 * Calculates alignment statistics and removes duplicate reads - Picard.
 * Counts the number of reads aligned to each gene - HTSeq-Count.
