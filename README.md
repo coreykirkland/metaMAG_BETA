@@ -25,7 +25,7 @@
 
 
 ## **MetaMAG Modules:**
-![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/14a446dc0323a8a653f5dfc0a3fb033d5d1704de/metaMAG.drawio(1).svg)
+![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/14a446dc0323a8a653f5dfc0a3fb033d5d1704de/metaMAG.drawio(1).svg)  
 
 
 
