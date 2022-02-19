@@ -25,9 +25,12 @@
 
 
 ## **MetaMAG Modules:**
-![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/e9061dbffec80597f34860dab92594fa9b759654/metaMAG.drawio(2).svg)  
 
-![pipeline_2](https://github.com/coreykirkland/metaMAG_test/blob/33e65ee534199bd91a69a94bc4d89b915a0b2cae/metaMAG.drawio(1).svg)  
+#### Modules:
+![Modules_1](https://github.com/coreykirkland/metaMAG_test/blob/e9061dbffec80597f34860dab92594fa9b759654/metaMAG.drawio(2).svg)  
+
+#### Pipeline:
+![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/33e65ee534199bd91a69a94bc4d89b915a0b2cae/metaMAG.drawio(1).svg)  
 
 
 
@@ -41,7 +44,7 @@
 ```
 sh metaMAG_setup.sh -m <Metagenome Name> -c <Contigs File> -a <Alignment File> -j <PATH to Java> -o <Output Directory>
 ```
-**metaMAG Module: metaMAG_setup.sh**  
+metaMAG Module: metaMAG_setup.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1)  
 -c: Contigs file from assembly step (.fa or .fasta)  
 -a Alignment/mapping file (.bam)  
@@ -67,7 +70,7 @@ show a head -n5 of each of the output files that is produced here as input for l
 ```
 sh metaMAG_cluster.sh -m <Metagenome Name> -t <No. of Threads> -o <Output Directory>
 ```
-**metaMAG Module: metaMAG_cluster.sh**  
+metaMAG Module: metaMAG_cluster.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
 -t: Number of threads for MMseqs2 program.  
 -o: Output directory (must be the same as used in previous module).  
@@ -92,7 +95,7 @@ head -n5 of this output file
 ```
 sh metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
 ```
-**metaMAG module: metaMAG_kofam.sh**  
+metaMAG module: metaMAG_kofam.sh  
 -k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -p: Profile (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -t: Number of threads.  
@@ -110,7 +113,7 @@ sh metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Dir
 ```
 sh metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
 ```
-**metaMAG module: metaMAG_gene.sh**  
+metaMAG module: metaMAG_gene.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
 -k: Kofam output file (two column file containing name and KO k number)  
 -o: Output directory (must be the same as used in previous module).  
@@ -126,7 +129,7 @@ sh metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
 ```
 sh metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Directory>
 ```
-**metaMAG module: metaMAG_genome.sh**  
+metaMAG module: metaMAG_genome.sh  
 -m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
 -b: Bin directory - PATH to directory containing .fa files from binning step. (More details needed).  
 -o: Output directory (must be the same as used in previous module).  
@@ -144,7 +147,7 @@ sh metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Director
 ```
 sh metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> -t <No. of Thread> -o <Output Directory>
 ```
-**metaMAG module: metaMAG_strain.sh**  
+metaMAG module: metaMAG_strain.sh  
 -m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
 -a: Alignment/mapping file (.bam; same as the file used in the metaMAG_setup module).  
 -c: Contigs file (.fa/.fasta; same as the file used in the metaMAG_setup module).  
