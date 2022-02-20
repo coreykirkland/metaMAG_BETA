@@ -53,6 +53,7 @@ metaMAG Module: metaMAG_setup.sh
 Note: All arguments required to successfully run the module.  
 
 ##### Outputs:
+(Output files)
 
 
 
@@ -71,6 +72,7 @@ metaMAG Module: metaMAG_cluster.sh
 Note: All arguments required to successfully run the module.  
 
 ##### Outputs:
+(Output files)
 
 
 
