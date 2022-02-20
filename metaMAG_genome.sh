@@ -22,7 +22,7 @@ echo "metaMAG Output Directory: $OUTPUT"
 #test -f some_file.txt ; echo $? # is this a file?
 #test -r some_file.txt ; echo $? $ is this file readable?
 
-echo "###### metaMAG_genome module: Updated 28/11/21 ######"
+echo "###### metaMAG_genome module: Updated 20/02/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/
@@ -55,7 +55,7 @@ grep -v "#" "$MG_DIR"/"$MG"_prodigal/"$MG".gff | cut -f 1,9 | sed "s/;/\t/" | se
 awk -v awkvar="$MG" '$3 == awkvar' "$metaMAG"/metaMAG/PercentTPM.tsv > "$metaMAG"/metaMAG/"$MG"_PercentTPM.tsv
 
 # RScript: Merge MAG_Table.tsv, MAG_Table_Updated.tsv, and PercentTPM.tsv
-MAGOutput="$MG_DIR"/"$MG"_
+MAGOutput="$metaMAG"/metaMAG/"$MG"_
 
 Rscript MAGPercent.R "$MG_DIR"/"$MG"_BIN_Table.tsv "$MG_DIR"/"$MG"_GFF_Table.tsv "$metaMAG"/metaMAG/"$MG"_PercentTPM.tsv "$MAGOutput"
 
