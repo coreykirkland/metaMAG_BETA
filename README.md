@@ -53,12 +53,6 @@ metaMAG Module: metaMAG_setup.sh
 Note: All arguments required to successfully run the module.  
 
 ##### Outputs:
-##### TPM_for_each_gene.tsv
- {Short description of the output file (1-2 sentence is fine)}
-```
-show a head -n5 of each of the output files that is produced here as input for later modules.
-```
-(Run all MGs with this script before moving on).
 
 
 
@@ -76,17 +70,9 @@ metaMAG Module: metaMAG_cluster.sh
 -o: Output directory (must be the same as used in previous module).  
 Note: All arguments required to successfully run the module.  
 
-##### Output:
-##### Descriptive_output_filename.tsv
- {Short description of the output file (1-2 sentence is fine)}
-```
-head -n5 of this output file
-```
-##### Descriptive_output_filename2.tsv
- {Short description of the second output file.}
-```
-head -n5 of this output file
-```
+##### Outputs:
+
+
 
 ## 3. metaMAG_kofam module:
 * Functionally annotates the representative protein family sequences from the MMseqs2 output - Kofam Scan.
@@ -122,6 +108,7 @@ metaMAG module: metaMAG_gene.sh
 (Output files)
 
 
+
 ## 5. metaMAG_genome module:
 * Calculates 
 
@@ -136,6 +123,7 @@ metaMAG module: metaMAG_genome.sh
 
 ##### Output:
 (Output files)
+
 
 
 ## 6. metaMAG_strain module:
@@ -156,6 +144,7 @@ metaMAG module: metaMAG_strain.sh
 
 ##### Output:
 (Output files)
+
 
 
 ## metaMAG Visualisation:  
