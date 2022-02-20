@@ -24,7 +24,7 @@
 
 
 
-## **metaMAG Modules:**
+## **Modules:**
 
 #### Modules:
 ![Modules_1](https://github.com/coreykirkland/metaMAG_test/blob/e9061dbffec80597f34860dab92594fa9b759654/metaMAG.drawio(2).svg)  
