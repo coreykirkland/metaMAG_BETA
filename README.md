@@ -24,7 +24,7 @@
 
 
 
-## **MetaMAG Modules:**
+## **metaMAG Modules:**
 
 #### Modules:
 ![Modules_1](https://github.com/coreykirkland/metaMAG_test/blob/e9061dbffec80597f34860dab92594fa9b759654/metaMAG.drawio(2).svg)  
@@ -151,6 +151,7 @@ metaMAG module: metaMAG_strain.sh
 
 ## metaMAG Visualisation:  
 * Scripts for the analysis and visualisation of data from metaMAG_genome module
+(Pipeline)
 
 ## 1. metaMAG_visualisation_setup
 * Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs) and MAG classification.
