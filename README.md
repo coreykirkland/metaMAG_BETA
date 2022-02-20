@@ -163,7 +163,7 @@ metaMAG module: metaMAG_strain.sh
 sh metaMAG_visualisation_setup.sh -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_setup.sh
--o: Output directory (must be the same as used in previous modules).
+-o: Output directory (must be the same as used in previous modules).  
 
 ## 2. metaMAG_visualisation_barchart
 * Produces a barchart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
@@ -172,10 +172,10 @@ metaMAG module: metaMAG_visualisation_setup.sh
 ```
 sh metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
 ```
-metaMAG module: metaMAG_visualisation_barchart.sh
--k: KEGG k-number (e.g. KO1944).
--b: Taxon level - Domain Kingdom Phylum Class Order Family Genus Species
--o: Output directory (must be the same as used in previous modules).
+metaMAG module: metaMAG_visualisation_barchart.sh  
+-k: KEGG k-number (e.g. KO1944).  
+-b: Taxon level - Domain Kingdom Phylum Class Order Family Genus Species  
+-o: Output directory (must be the same as used in previous modules).  
 
 ## 2. metaMAG_visualisation_heatmap
 * Produces a heatmap for MAGs from a given order using a database of selected KOs. 
@@ -184,8 +184,8 @@ metaMAG module: metaMAG_visualisation_barchart.sh
 ```
 sh etaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
 ```
-metaMAG module: metaMAG_visualisation_heatmap.sh
--t: Name of order based on MAG classification table (e.g. o__Solirubrobacterales)
--p: Include GFs/KOs with at least one MAG greater than "percentage" (e.g. 50)
--o: Output directory (must be the same as used in previous modules).
+metaMAG module: metaMAG_visualisation_heatmap.sh  
+-t: Name of order based on MAG classification table (e.g. o__Solirubrobacterales)  
+-p: Include GFs/KOs with at least one MAG greater than "percentage" (e.g. 50)  
+-o: Output directory (must be the same as used in previous modules).  
 
