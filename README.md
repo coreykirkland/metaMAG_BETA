@@ -112,7 +112,7 @@ metaMAG module: metaMAG_gene.sh
 
 
 ## 5. metaMAG_genome module:
-* Calculates 
+* Calculates the percentage of reads for a GF or KO (two separate tables) that belongs to a MAG in a metagenome.
 
 ##### Usage:
 ```
@@ -130,8 +130,8 @@ metaMAG module: metaMAG_genome.sh
 
 ## 6. metaMAG_strain module:
 * Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
-* Calculates... - R script.
-* Optional module.
+* Integrates statistics with GFs and MAGs - R script.
+* Optional module - computationally expensive with large datasets.
 
 ##### Usage:
 ```
@@ -150,12 +150,12 @@ metaMAG module: metaMAG_strain.sh
 
 
 ## metaMAG Visualisation:  
-* Scripts for the analysis and visualisation of data from metaMAG_genome module
+* Scripts for the analysis and visualisation of data from the **metaMAG_genome** module
 
 ## 1. metaMAG_visualisation_setup
-* Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs) and MAG classification.
-* Run this script once to setup files required for below scripts:
-* Requires a table of MAG classification
+* Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs from the KEGG database) and MAG classification.
+* Run this script once to setup files required for the below visualisation scripts.
+* Requires a table of MAG classification - see example using GTAB.
 
 ##### Usage:
 ```
