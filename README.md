@@ -151,7 +151,6 @@ metaMAG module: metaMAG_strain.sh
 
 ## metaMAG Visualisation:  
 * Scripts for the analysis and visualisation of data from metaMAG_genome module
-(Pipeline)
 
 ## 1. metaMAG_visualisation_setup
 * Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs) and MAG classification.
@@ -167,18 +166,21 @@ metaMAG module: metaMAG_visualisation_setup.sh
 
 ## 2. metaMAG_visualisation_barchart
 * Produces a barchart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
+* Requires MergedKOAll.tsv file from metaMAG_visualisation_setup.
 
 ##### Usage:
 ```
 sh metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
+-
 -k: KEGG k-number (e.g. KO1944).  
 -b: Taxon level - Domain Kingdom Phylum Class Order Family Genus Species  
 -o: Output directory (must be the same as used in previous modules).  
 
 ## 2. metaMAG_visualisation_heatmap
 * Produces a heatmap for MAGs from a given order using a database of selected KOs. 
+* Requires MergedGF.tsv and MergedKO.tsv files from metaMAG_visualisation_setup.
 
 ##### Usage:
 ```
