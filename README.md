@@ -173,7 +173,6 @@ metaMAG module: metaMAG_visualisation_setup.sh
 sh metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
--
 -k: KEGG k-number (e.g. KO1944).  
 -b: Taxon level - Domain Kingdom Phylum Class Order Family Genus Species  
 -o: Output directory (must be the same as used in previous modules).  
