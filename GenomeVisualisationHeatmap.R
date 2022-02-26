@@ -16,6 +16,10 @@ library(dplyr)
 library(ComplexHeatmap)
 library(circlize)
 
+# Read Data:
+MergedGF <- read.delim(MergedGF, header = TRUE, sep = "\t")
+MergedKO <- read.delim(MergedKO, header = TRUE, sep = "\t")
+
 # Heatmap - MergedGF:
 HeatmapTaxon <- data.frame(HeatmapTaxon)
 MergedGF1 <- filter(MergedGF, Order %in% HeatmapTaxon$HeatmapTaxon)

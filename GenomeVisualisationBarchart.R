@@ -16,6 +16,9 @@ library(ggplot2)
 
 ## Visualisation of Data:
 
+# Read Data:
+MergedKOAll <- read.delim(MergedKOAll, header = TRUE, sep = "\t")
+
 # Barchart - MergedKOAll: 
 BarchartKO <- data.frame(BarchartKO)
 BarchartDF <- filter(MergedKOAll, KO %in% BarchartKO$BarchartKO)
