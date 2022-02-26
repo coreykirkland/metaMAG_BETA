@@ -155,7 +155,7 @@ metaMAG module: metaMAG_strain.sh
 ## 1. metaMAG_visualisation_setup
 * Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs from the KEGG database) and MAG classification.
 * Run this script once to setup files required for the below visualisation scripts.
-* Requires a table of MAG classification - see example using GTAB.
+* Requires a table of MAG classification - see example using GTDB.
 
 ##### Usage:
 ```
