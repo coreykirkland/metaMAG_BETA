@@ -1,5 +1,5 @@
 # **metaMAG**
-#### Integrating Three Levels of Metagenomic Information: 
+### Integrating Three Levels of Metagenomic Information: 
 #### 1) Gene-centric
 #### 2) Genome-centric
 #### 3) Strain-centric
@@ -12,9 +12,9 @@
 * Python v3.7.3 and Pandas v0.24.2
 * MMseqs2 v13.45111
 * inStrain v1.5.3
-## **Dependencies: R**
+## **R Dependencies:**
 * R v4.0.2
-* R Packages: tidyr, dplyr, ggplot2
+* R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize)
 
 
 ## **Required Input Files:**
