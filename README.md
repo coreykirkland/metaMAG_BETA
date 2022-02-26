@@ -155,8 +155,15 @@ metaMAG module: metaMAG_strain.sh
 ## 1. metaMAG_visualisation_setup
 * Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs from the KEGG database) and MAG classification.
 * Run this script once to setup files required for the below visualisation scripts.
-* Requires a table of MAG classification - see example using GTDB.
+* Requires a table of MAG classification - see below and table provided:
 
+```
+MAG	Depth	Bacteria	Phylum	Class	Order	Family	Genus	Species
+AcS1-1	Surface	d__Bacteria	p__Acidobacteriota	c__Acidobacteriae	o__UBA7541	f__UBA7541	g__	s__
+AcS1-10	Surface	d__Bacteria	p__Desulfobacterota_B	c__Binatia	o__Binatales	f__Binataceae	g__	s__
+AcS1-11	Surface	d__Bacteria	p__Verrucomicrobiota	c__Verrucomicrobiae	o__Pedosphaerales	f__Pedosphaeraceae	g__UBA11358	s__
+AcS1-12	Surface	d__Bacteria	p__Proteobacteria	c__Gammaproteobacteria	o__SLND01	f__	g__	s__
+```
 ##### Usage:
 ```
 sh metaMAG_visualisation_setup.sh -o <Output Directory>
