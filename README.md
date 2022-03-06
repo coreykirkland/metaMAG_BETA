@@ -11,7 +11,8 @@
 * HTSeq v0.13.5
 * Python v3.7.3 and Pandas v0.24.2
 * MMseqs2 v13.45111
-* inStrain v1.5.3
+* Kofam_Scan v1.3.0 (requires database)
+* inStrain v1.5.3  
 Note: these versions have been tested
 ## **R Dependencies:**
 * R v4.0.2
