@@ -12,6 +12,7 @@
 * Python v3.7.3 and Pandas v0.24.2
 * MMseqs2 v13.45111
 * inStrain v1.5.3
+Note: these versions have been tested
 ## **R Dependencies:**
 * R v4.0.2
 * R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize)
