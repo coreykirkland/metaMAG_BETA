@@ -172,7 +172,7 @@ metaMAG module: metaMAG_visualisation_setup.sh
 -o: Output directory (must be the same as used in previous modules).  
 
 ## 2. metaMAG_visualisation_barchart
-* Produces a barchart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
+* Produces a bar chart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
 * Requires MergedKOAll.tsv file from metaMAG_visualisation_setup.
 
 ##### Usage:
