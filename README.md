@@ -14,7 +14,7 @@
 * Kofam_Scan v1.3.0 (requires database - ftp.genome.jp/pub/db/kofam/)
 * inStrain v1.5.3  
 * R v4.0.2
-* R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize)  
+* R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize  
 Note: these versions have been tested
 
 
