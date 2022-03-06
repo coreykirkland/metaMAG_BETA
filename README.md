@@ -181,7 +181,7 @@ sh metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Out
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
 -k: KEGG k-number (e.g. KO1944).  
--b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or a specific MAG 
+-b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or MAG 
 -o: Output directory (must be the same as used in previous modules).  
 
 ## 2. metaMAG_visualisation_heatmap
