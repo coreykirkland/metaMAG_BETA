@@ -3,7 +3,7 @@
 	set -u
 	set -o pipefail
 
-while getopts a:k:p:t:o flag
+while getopts a:k:p:t:o: flag
 do
 	case "${flag}" in
 		k) KOLIST=${OPTARG};;
