@@ -1,8 +1,5 @@
 # **metaMAG**
-### Integrating Three Levels of Metagenomic Information: 
-#### 1) Gene-centric
-#### 2) Genome-centric
-#### 3) Strain-centric
+### A Pipeline to Integrate Metagenome (meta) and Metagenome-Assembled Genome (MAG) Data
 
 
 ## **Dependencies:**
