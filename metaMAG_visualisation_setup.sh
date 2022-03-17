@@ -3,7 +3,7 @@
 	set -u
 	set -o pipefail
 
-while getopts o flag
+while getopts o: flag
 do
 	case "${flag}" in
 		o) OUTPUT=${OPTARG};;
