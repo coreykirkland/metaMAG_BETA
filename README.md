@@ -15,8 +15,9 @@
 * inStrain v1.5.3  
 * R v4.0.2
 * R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize  
-Note: these versions have been tested
+Note: these versions have been tested   
 
+YAML files have been created for each module/script - see Conda folder
 
 ## **Required Input Files:**
 * Contig file (.fasta) for each metagenome (MG).
