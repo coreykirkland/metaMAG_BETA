@@ -14,7 +14,7 @@
 * R Packages: tidyr, dplyr, ggplot2, ComplexHeatmap, circlize  
 Note: these versions have been tested   
 
-YAML files have been created for each module/script - see Conda folder
+**Conda:** YAML files have been created for each module/script - see Conda folder
 
 ## **Required Input Files:**
 * Contig file (.fasta) for each metagenome (MG).
