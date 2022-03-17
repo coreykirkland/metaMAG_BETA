@@ -3,18 +3,15 @@
 	set -u
 	set -o pipefail
 
-while getopts m:t:o: flag
+while getopts t:o: flag
 do
 	case "${flag}" in
-		m) MG=${OPTARG};;
 		t) THREADS=${OPTARG};;
 		o) OUTPUT=${OPTARG};;
 	esac
 done
 
 echo "metaMAG Module: $0"
-echo "Metagenome Name (No spaces or special characters): $MG"; 
-# Note MG must be one word and contain no special characters (e.g. MG or MetagenomeName)
 echo "Number of Threads: $THREAD";
 echo "metaMAG Output Directory: $OUTPUT"
 
@@ -22,7 +19,7 @@ echo "metaMAG Output Directory: $OUTPUT"
 #test -f some_file.txt ; echo $? # is this a file?
 #test -r some_file.txt ; echo $? $ is this file readable?
 
-echo "###### metaMAG_cluster module: Updated 28/11/21 ######"
+echo "###### metaMAG_cluster module: Updated 17/03/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/

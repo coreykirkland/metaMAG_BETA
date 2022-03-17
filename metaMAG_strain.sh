@@ -26,7 +26,7 @@ echo "metaMAG Output Directory: $OUTPUT"
 #test -f some_file.txt ; echo $? # is this a file?
 #test -r some_file.txt ; echo $? $ is this file readable?
 
-echo "###### metaMAG_strain module: Updated 28/11/21 ######"
+echo "###### metaMAG_strain module: Updated 17/03/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/
