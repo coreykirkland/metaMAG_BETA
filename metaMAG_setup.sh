@@ -3,7 +3,7 @@
 	set -u
 	set -o pipefail
 
-while getopts m:c:a:j:o flag
+while getopts m:c:a:j:o: flag
 do
 	case "${flag}" in
 		m) MG=${OPTARG};;
