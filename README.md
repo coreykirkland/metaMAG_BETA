@@ -1,5 +1,5 @@
 # **metaMAG**
-### A Pipeline to Integrate Metagenome (meta) and Metagenome-Assembled Genome (MAG) Data
+### Integrating Metagenome (meta) and Metagenome-Assembled Genome (MAG) Data
 
 
 ## **Dependencies:**
