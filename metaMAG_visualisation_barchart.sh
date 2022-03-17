@@ -3,7 +3,7 @@
 	set -u
 	set -o pipefail
 
-while getopts k:b:o flag
+while getopts k:b:o: flag
 do
 	case "${flag}" in
 		k) BARCHARTKO=${OPTARG};;
