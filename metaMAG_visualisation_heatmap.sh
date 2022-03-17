@@ -3,7 +3,7 @@
 	set -u
 	set -o pipefail
 
-while getopts t:p:o flag
+while getopts t:p:o: flag
 do
 	case "${flag}" in
 		t) HEATMAPTAXON=${OPTARG};;
