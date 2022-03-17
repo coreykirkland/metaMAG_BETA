@@ -65,10 +65,9 @@ Note: All arguments required to successfully run the module.
 
 ##### Usage:
 ```
-sh metaMAG_cluster.sh -m <Metagenome Name> -t <No. of Threads> -o <Output Directory>
+sh metaMAG_cluster.sh -t <No. of Threads> -o <Output Directory>
 ```
-metaMAG Module: metaMAG_cluster.sh  
--m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
+metaMAG Module: metaMAG_cluster.sh    
 -t: Number of threads for MMseqs2 program.  
 -o: Output directory (must be the same as used in previous module).  
 Note: All arguments required to successfully run the module.  
