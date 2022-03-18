@@ -41,7 +41,7 @@ Note: these versions have been tested
 
 ##### Usage:
 ```
-sh metaMAG_setup.sh -m <Metagenome Name> -c <Contigs File> -a <Alignment File> -j <PATH to Java> -o <Output Directory>
+bash metaMAG_setup.sh -m <Metagenome Name> -c <Contigs File> -a <Alignment File> -j <PATH to Java> -o <Output Directory>
 ```
 metaMAG Module: metaMAG_setup.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1)  
@@ -62,7 +62,7 @@ Note: All arguments required to successfully run the module.
 
 ##### Usage:
 ```
-sh metaMAG_cluster.sh -t <No. of Threads> -o <Output Directory>
+bash metaMAG_cluster.sh -t <No. of Threads> -o <Output Directory>
 ```
 metaMAG Module: metaMAG_cluster.sh    
 -t: Number of threads for MMseqs2 program.  
@@ -79,7 +79,7 @@ Note: All arguments required to successfully run the module.
 
 ##### Usage:
 ```
-sh metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
+bash metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
 ```
 metaMAG module: metaMAG_kofam.sh  
 -k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
@@ -97,7 +97,7 @@ metaMAG module: metaMAG_kofam.sh
 
 ##### Usage:
 ```
-sh metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
+bash metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
 ```
 metaMAG module: metaMAG_gene.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
@@ -114,7 +114,7 @@ metaMAG module: metaMAG_gene.sh
 
 ##### Usage:
 ```
-sh metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Directory>
+bash metaMAG_genome.sh -m <Metagenome Name> -b <Bin Directory> -o <Output Directory>
 ```
 metaMAG module: metaMAG_genome.sh  
 -m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
@@ -133,7 +133,7 @@ metaMAG module: metaMAG_genome.sh
 
 ##### Usage:
 ```
-sh metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> -t <No. of Thread> -o <Output Directory>
+bash metaMAG_strain.sh -m <Metagenome Name> -a <Alignment File> -c <Contigs File> -t <No. of Thread> -o <Output Directory>
 ```
 metaMAG module: metaMAG_strain.sh  
 -m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
@@ -164,7 +164,7 @@ AcS1-12	Surface	d__Bacteria	p__Proteobacteria	c__Gammaproteobacteria	o__SLND01	f
 ```
 ##### Usage:
 ```
-sh metaMAG_visualisation_setup.sh -o <Output Directory>
+bash metaMAG_visualisation_setup.sh -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_setup.sh  
 -o: Output directory (must be the same as used in previous modules).  
@@ -176,7 +176,7 @@ Ensure files are in the same location as created during metaMAG_genome module
 
 ##### Usage:
 ```
-sh metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
+bash metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
 -k: KEGG k-number (e.g. KO1944).  
@@ -189,7 +189,7 @@ metaMAG module: metaMAG_visualisation_barchart.sh
 
 ##### Usage:
 ```
-sh etaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
+bash etaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
 ```
 metaMAG module: metaMAG_visualisation_heatmap.sh  
 -t: Name of order based on MAG classification table (e.g. o__Solirubrobacterales)  
