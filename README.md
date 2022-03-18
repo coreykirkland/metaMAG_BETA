@@ -17,11 +17,31 @@ Note: these versions have been tested
 **Conda:** YAML files have been created for each module/script - see Conda folder
 
 ## **Required Input Files:**
-* Contig file (.fasta) for each metagenome (MG).
-* Alignment/mapping file (.bam) for each MG.
-* Name of directory containing all bin files (.fasta) for each MG.
+**1. Contig file (.fasta) for a metagenome (MG)**
+```
+>NODE_1_length_1221932_cov_20.113987
+GCTGATGAAGGCGCTCGCGAGCGAGCTCGGCGTCGAGATGATCTCGATCAAGTGCAGCGA
+TCTGATGAGCAAGTGGTACGGCGAGTCGGAGAACCGCGTCGCCGACCTTCTGCGCACCGC
+CCGAGAGCGGGCCCCGTGCATCCTGTTCATGGACGAGATCGACGCGGTGGCCAAGCGCCG
+CGACATGTACACCGCGGACGATGTCACGCCCCGGCTGCTGAGCATCCTGCTCAGCGAGAT
+```
+**2. Alignment/mapping file (.bam) for a MG**
 
+**3. Name of directory containing all bin files (.fasta) for a MG**  
 
+Example of directory:
+```
+AcS5-100.fa  AcS5-118.fa  AcS5-16.fa  AcS5-34.fa  AcS5-51.fa  AcS5-69.fa  AcS5-86.fa
+AcS5-101.fa  AcS5-119.fa  AcS5-17.fa  AcS5-35.fa  AcS5-52.fa  AcS5-6.fa   AcS5-87.fa
+```
+Example of Fasta:
+```
+>NODE_2_length_707815_cov_20.038156
+TTGGTATCCACTTTCTGAAGCGGATGCGAATTGCCGAGAGGTTCAGGGGCCGACGGCCGC
+AGGAGCCGTCGGCCCCCGTCTCCCCGGAGCAGTTCAGGAGAGATGGTTTTCTTTCCAAGC
+CTTTGATACAATGGAGCCAATGGCAACCAGGAAAAAAGTGTTCGAGGTCGGGCTGGCGAT
+CATCGTGGCGATCGCGCTTTTGGGAAGCGGTTTTTCGCTTGGTTGGAGCGCTGGCAGTAA
+```
 
 ## **Modules:**
 
@@ -39,7 +59,7 @@ Note: these versions have been tested
 * Counts the number of reads aligned to each gene - HTSeq-Count.
 * Normalises gene reads by Transcripts Per Million (TPM) - https://github.com/EnvGen/metagenomics-workshop
 
-##### Usage:
+#### Usage:
 ```
 bash metaMAG_setup.sh -m <Metagenome Name> -c <Contigs File> -a <Alignment File> -j <PATH to Java> -o <Output Directory>
 ```
@@ -51,10 +71,63 @@ metaMAG Module: metaMAG_setup.sh
 -o: Output directory (this is where a folder called “metaMAG” will be created and contain all output files for all modules).  
 Note: All arguments required to successfully run the module.  
 
-##### Outputs:
-(Output files)
-
-
+#### Outputs:
+##### **Prodigal .faa:**
+```
+>AcS5_NODE_1_length_1221932_cov_20.113987_1 # 2 # 1594 # 1 # ID=1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.666
+LMKALASELGVEMISIKCSDLMSKWYGESENRVADLLRTARERAPCILFMDEIDAVAKRR
+DMYTADDVTPRLLSILLSEMDGIDKSAGVMVVGSTNKPDLIDQALMRPGRLDKIIYVPPP
+DFNERMEIIHVHLVGRPVANDIDLSEIAKKTERFSGADLANLVREGATIAVRREMMTGVR
+APIAMDDFRQIMGRIKPSISLRMIADYETMKLDYERKMHQVQRMERKIVVKWDDVGGLID
+```
+##### **Prodigal .fna**
+```
+>NODE_1_length_1221932_cov_20.113987_1 # 2 # 1594 # 1 # ID=1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.666
+CTGATGAAGGCGCTCGCGAGCGAGCTCGGCGTCGAGATGATCTCGATCAAGTGCAGCGATCTGATGAGCA
+AGTGGTACGGCGAGTCGGAGAACCGCGTCGCCGACCTTCTGCGCACCGCCCGAGAGCGGGCCCCGTGCAT
+CCTGTTCATGGACGAGATCGACGCGGTGGCCAAGCGCCGCGACATGTACACCGCGGACGATGTCACGCCC
+CGGCTGCTGAGCATCCTGCTCAGCGAGATGGACGGGATCGACAAGTCGGCGGGCGTGATGGTCGTCGGCT
+```
+##### **Prodigal .gff**
+```
+##gff-version  3
+# Sequence Data: seqnum=1;seqlen=1221932;seqhdr="NODE_1_length_1221932_cov_20.113987"
+# Model Data: version=Prodigal.v2.6.3;run_type=Metagenomic;model="13|Catenulispora_acidiphila_DSM_44928|B|69.8|11|1";gc_cont=69.80;transl_table=11;uses_sd=1
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2       1594    321.5   +  0ID=1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.666;conf=99.99;score=321.47;cscore=318.25;sscore=3.22;rscore=0.00;uscore=0.00;tscore=3.22;
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     1729    2070    27.0    +  0ID=1_2;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.719;conf=99.80;score=26.98;cscore=27.80;sscore=-0.82;rscore=-4.48;uscore=-0.87;tscore=4.54;
+```
+##### **map.gtf***
+```
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2       1594    .       +       .       gene_id 1_1
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     1729    2070    .       +       .       gene_id 1_2
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2098    5868    .       +       .       gene_id 1_3
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     5865    9338    .       +       .       gene_id 1_4
+NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     9465    13007   .       +       .       gene_id 1_5
+```
+##### **.count**
+```
+100000_1        16
+100000_2        12
+100000_3        15
+100000_4        31
+100000_5        15
+```
+##### **.genelengths**
+```
+1_1     1593
+1_2     342
+1_3     3771
+1_4     3474
+1_5     3543
+```
+##### **.tpm**
+```
+gene_id AcS5    AcS5
+58444_3 0.026679310668686264    AcS5
+199562_2        0.11971582727610783     AcS5
+44805_3 0.27201702765695507     AcS5
+161567_2        0.04380454386818083     AcS5
+```
 
 ## 2. metaMAG_cluster module:
 * Clusters amino acid sequences from all MGs into protein families - MMseqs2.
