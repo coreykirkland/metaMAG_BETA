@@ -60,7 +60,7 @@ mmseqs convert2fasta "$metaMAG"/metaMAG/mmseqs2/test_cluster_repseq "$metaMAG"/m
 echo "Calculating MMSeqs2 Statistics:"
 
 MmseqOutput="$metaMAG"/metaMAG/
-Rscript Mmseqs2Stats.R "$metaMAG"/metaMAG/mmseqs2/allMG_AA_cluster.tsv "$MmseqOutput"
+Rscript MmseqsStats.R "$metaMAG"/metaMAG/mmseqs2/allMG_AA_cluster.tsv "$MmseqOutput"
 
 # Output: MmseqsStats.tsv and MmseqsHistogram.pdf
 
