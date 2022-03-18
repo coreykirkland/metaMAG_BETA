@@ -12,7 +12,7 @@ do
 done
 
 echo "metaMAG Module: $0"
-echo "Number of Threads: $THREAD";
+echo "Number of Threads: $THREADS";
 echo "metaMAG Output Directory: $OUTPUT"
 
 #test -d some_directory ; echo $? # is this a directory? 
