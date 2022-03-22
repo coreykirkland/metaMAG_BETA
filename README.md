@@ -186,7 +186,7 @@ metaMAG module: metaMAG_kofam.sh
 -o: Output directory (must be the same as used in previous module).  
 
 #### Output:
-##### ** Kofam Scan Output: **
+##### **Kofam Scan Output:**
 ```
 FILE
 ```
