@@ -96,7 +96,7 @@ CGGCTGCTGAGCATCCTGCTCAGCGAGATGGACGGGATCGACAAGTCGGCGGGCGTGATGGTCGTCGGCT
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2       1594    321.5   +  0ID=1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.666;conf=99.99;score=321.47;cscore=318.25;sscore=3.22;rscore=0.00;uscore=0.00;tscore=3.22;
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     1729    2070    27.0    +  0ID=1_2;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.719;conf=99.80;score=26.98;cscore=27.80;sscore=-0.82;rscore=-4.48;uscore=-0.87;tscore=4.54;
 ```
-##### **map.gtf***
+##### **GTF File: map.gtf***
 ```
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2       1594    .       +       .       gene_id 1_1
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     1729    2070    .       +       .       gene_id 1_2
@@ -104,7 +104,7 @@ NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     2098    5868    
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     5865    9338    .       +       .       gene_id 1_4
 NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     9465    13007   .       +       .       gene_id 1_5
 ```
-##### **.count**
+##### **Gene Count: .count**
 ```
 100000_1        16
 100000_2        12
@@ -112,7 +112,7 @@ NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     9465    13007   
 100000_4        31
 100000_5        15
 ```
-##### **.genelengths**
+##### **Gene Lengths: .genelengths**
 ```
 1_1     1593
 1_2     342
@@ -120,7 +120,7 @@ NODE_1_length_1221932_cov_20.113987     Prodigal_v2.6.3 CDS     9465    13007   
 1_4     3474
 1_5     3543
 ```
-##### **.tpm**
+##### **Gene TPM: .tpm**
 ```
 gene_id AcS5    AcS5
 58444_3 0.026679310668686264    AcS5
@@ -164,12 +164,12 @@ AcS5_NODE_289777_3_GeneID=289777_3      AcS5_NODE_67580_4_GeneID=67580_4
 >AcS5_NODE_1_1_GeneID=1_1
 LMKALASELGVEMISIKCSDLMSKWYGESENRVADLLRTARERAPCILFMDEIDAVAKRRDMYTADDVTPRLLSILLSEMDGIDKSAGVMVVGSTNKPDLIDQALMRPGRLDKIIYVPPPDFNERMEIIHVHLVGRPVANDIDLSEIAKKTERFSGADLANLVREGATIAVRREMMTGVRAPIAMDDFRQIMGRIKPSISLRMIADYETMKLDYERKMHQVQRMERKIVVKWDDVGGLIDIKTAIREYVELPLTRPELMESYKIKTGRGILLFGPPGCGKTHIMRAAANELNVPMQIVNGPELVSALAGQSEAAVRDVLYRARENAPSIVFFDEIDALASRESMKTPEVSRAVSQFLTEMDGLRPKDKVIIIATTNRPQMLDPALLRPGRFDKIFYVPPPDLDARQDIFRIHMKGVPAEGAIDFGDLAGRSEGFSGADIASVVDEAKLIALREQLAVELSEGPNARSAAMGGLFTASSTPTAAAKIEPVSKVVGVRMANLLEAVGKTKTSITRETLAWAEEFIRSYGTRA*
 ```
-##### **MmseqsStats.tsv**
+##### **MMSeqs2 Statistics: MmseqsStats.tsv**
 ```
 "Singletons"    "Percent_Singletons"    "MultiGene_GF"  "Percent_MultiGene_GF"  "Total"
 734841  77.7133375423947        210738  22.2866624576053        945579
 ```
-##### **MmseqsHistogram.pdf**
+##### **MMSeqs2 Statistics: MmseqsHistogram.pdf**
 Histogram of MMSeqs2 statistics.
 
 ## 3. metaMAG_kofam module:
