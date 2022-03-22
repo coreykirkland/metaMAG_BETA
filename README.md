@@ -180,16 +180,16 @@ Histogram of MMSeqs2 statistics.
 bash metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
 ```
 metaMAG module: metaMAG_kofam.sh  
--k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
+-k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan) 
 -p: Profile (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -t: Number of threads.  
 -o: Output directory (must be the same as used in previous module).  
 
-##### Output:
-(Highlight the Kofam output file required for next module).
-
-
-
+#### Output:
+##### ** Kofam Scan Output: **
+```
+FILE
+```
 ## 4. metaMAG_gene module:
 * Integrates gene family (GF) and KEGG Orthology (KO) with TPM data - R script (TPM.R).
 
@@ -199,7 +199,7 @@ bash metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory
 ```
 metaMAG module: metaMAG_gene.sh  
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
--k: Kofam output file (two column file containing name and KO k number)  
+-k: Kofam output file (two column file containing name and KO k number)  NOT REQUIRED??  
 -o: Output directory (must be the same as used in previous module).  
 
 ##### Output:
