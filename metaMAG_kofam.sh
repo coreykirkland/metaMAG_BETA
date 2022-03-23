@@ -23,7 +23,7 @@ echo "metaMAG Output Directory: $OUTPUT"
 #test -f some_file.txt ; echo $? # is this a file?
 #test -r some_file.txt ; echo $? $ is this file readable?
 
-echo "###### metaMAG_kofam module: Updated 22/03/22 ######"
+echo "###### metaMAG_kofam module: Updated 23/03/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG
@@ -32,7 +32,7 @@ metaMAG="$OUTPUT"/metaMAG
 
 mkdir "$metaMAG"/Kofam_Scan/
 
-exec_annotation --cpu "$THREADS" -f mapper -k "$KOLIST" -p "$PROFILE" -o "$metaMAG"/Kofam_Scan/ "$metaMAG"/metaMAG/mmseqs2/test_cluster_repseq.fasta
+exec_annotation --cpu "$THREADS" -f mapper -k "$KOLIST" -p "$PROFILE" -o "$metaMAG"/Kofam_Scan/Kofam_Scan_Results.txt --tmp-dir "$metaMAG"/Kofam_Scan/tmp  "$metaMAG"/metaMAG/mmseqs2/test_cluster_repseq.fasta
 
 echo "### END OF MODULE ###"
 
