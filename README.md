@@ -25,16 +25,16 @@ TCTGATGAGCAAGTGGTACGGCGAGTCGGAGAACCGCGTCGCCGACCTTCTGCGCACCGC
 CCGAGAGCGGGCCCCGTGCATCCTGTTCATGGACGAGATCGACGCGGTGGCCAAGCGCCG
 CGACATGTACACCGCGGACGATGTCACGCCCCGGCTGCTGAGCATCCTGCTCAGCGAGAT
 ```
-**2. Alignment/mapping file (.bam) for a MG**
+**2. Alignment/mapping file (.bam) for a MG**  
 
-**3. Name of directory containing all bin files (.fasta) for a MG**  
+**3. Name of directory containing all bin files (.fasta) for a MG**
 
-Example of directory:
+Example of the directory:
 ```
 AcS5-100.fa  AcS5-118.fa  AcS5-16.fa  AcS5-34.fa  AcS5-51.fa  AcS5-69.fa  AcS5-86.fa
 AcS5-101.fa  AcS5-119.fa  AcS5-17.fa  AcS5-35.fa  AcS5-52.fa  AcS5-6.fa   AcS5-87.fa
 ```
-Example of Fasta:
+Example of a .fasta file:
 ```
 >NODE_2_length_707815_cov_20.038156
 TTGGTATCCACTTTCTGAAGCGGATGCGAATTGCCGAGAGGTTCAGGGGCCGACGGCCGC
@@ -151,7 +151,7 @@ DMYTADDVTPRLLSILLSEMDGIDKSAGVMVVGSTNKPDLIDQALMRPGRLDKIIYVPPP
 DFNERMEIIHVHLVGRPVANDIDLSEIAKKTERFSGADLANLVREGATIAVRREMMTGVR
 APIAMDDFRQIMGRIKPSISLRMIADYETMKLDYERKMHQVQRMERKIVVKWDDVGGLID
 ```
-##### **MMSeqs2 Output: allMG_AA_cluster.tsv**
+##### **MMseqs2 Output: allMG_AA_cluster.tsv**
 ```
 AcS5_NODE_289734_1_GeneID=289734_1      AcS5_NODE_289734_1_GeneID=289734_1
 AcS5_NODE_289750_1_GeneID=289750_1      AcS5_NODE_289750_1_GeneID=289750_1
@@ -159,18 +159,18 @@ AcS5_NODE_289765_3_GeneID=289765_3      AcS5_NODE_289765_3_GeneID=289765_3
 AcS5_NODE_289777_3_GeneID=289777_3      AcS5_NODE_289777_3_GeneID=289777_3
 AcS5_NODE_289777_3_GeneID=289777_3      AcS5_NODE_67580_4_GeneID=67580_4
 ```
-##### **MMSeqs2 Output: test_cluster_repseq.fasta**
+##### **MMseqs2 Output: test_cluster_repseq.fasta**
 ```
 >AcS5_NODE_1_1_GeneID=1_1
 LMKALASELGVEMISIKCSDLMSKWYGESENRVADLLRTARERAPCILFMDEIDAVAKRRDMYTADDVTPRLLSILLSEMDGIDKSAGVMVVGSTNKPDLIDQALMRPGRLDKIIYVPPPDFNERMEIIHVHLVGRPVANDIDLSEIAKKTERFSGADLANLVREGATIAVRREMMTGVRAPIAMDDFRQIMGRIKPSISLRMIADYETMKLDYERKMHQVQRMERKIVVKWDDVGGLIDIKTAIREYVELPLTRPELMESYKIKTGRGILLFGPPGCGKTHIMRAAANELNVPMQIVNGPELVSALAGQSEAAVRDVLYRARENAPSIVFFDEIDALASRESMKTPEVSRAVSQFLTEMDGLRPKDKVIIIATTNRPQMLDPALLRPGRFDKIFYVPPPDLDARQDIFRIHMKGVPAEGAIDFGDLAGRSEGFSGADIASVVDEAKLIALREQLAVELSEGPNARSAAMGGLFTASSTPTAAAKIEPVSKVVGVRMANLLEAVGKTKTSITRETLAWAEEFIRSYGTRA*
 ```
-##### **MMSeqs2 Statistics: MmseqsStats.tsv**
+##### **MMseqs2 Statistics: MmseqsStats.tsv**
 ```
 "Singletons"    "Percent_Singletons"    "MultiGene_GF"  "Percent_MultiGene_GF"  "Total"
 734841  77.7133375423947        210738  22.2866624576053        945579
 ```
-##### **MMSeqs2 Statistics: MmseqsHistogram.pdf**
-Histogram of MMSeqs2 statistics.
+##### **MMseqs2 Statistics: MmseqsHistogram.pdf**
+Histogram of MMseqs2 statistics.
 
 ## 3. metaMAG_kofam module:
 * Functionally annotates the representative protein family sequences from the MMseqs2 output - Kofam Scan.
@@ -180,15 +180,15 @@ Histogram of MMSeqs2 statistics.
 bash metaMAG_kofam.sh -k <KO List> -p <Profile> -t <No. of Threads> -o <Output Directory>
 ```
 metaMAG module: metaMAG_kofam.sh  
--k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan) 
+-k: KO list (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -p: Profile (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -t: Number of threads.  
 -o: Output directory (must be the same as used in previous module).  
 
 #### Output:
-##### **Kofam Scan Output:**
+##### **Kofam Scan Output: Kofam_Scan_Results.txt**
 ```
-FILE
+
 ```
 ## 4. metaMAG_gene module:
 * Integrates gene family (GF) and KEGG Orthology (KO) with TPM data - R script (TPM.R).
