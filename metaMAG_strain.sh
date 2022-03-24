@@ -22,9 +22,6 @@ echo "Contig File : $CONTIG";
 echo "Number of Threads: $THREAD";
 echo "metaMAG Output Directory: $OUTPUT"
 
-#test -d some_directory ; echo $? # is this a directory? 
-#test -f some_file.txt ; echo $? # is this a file?
-#test -r some_file.txt ; echo $? $ is this file readable?
 
 echo "###### metaMAG_strain module: Updated 17/03/22 ######"
 

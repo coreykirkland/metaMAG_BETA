@@ -17,9 +17,6 @@ echo "Barchat KO: $BARCHARTKO";
 echo "Barchart Taxon: $BARCHARTFILL";
 echo "metaMAG Output Directory: $OUTPUT"
 
-#test -d some_directory ; echo $? # is this a directory? 
-#test -f some_file.txt ; echo $? # is this a file?
-#test -r some_file.txt ; echo $? $ is this file readable?
 
 echo "###### metaMAG_visualisation_barchart module: Updated 17/03/22 ######"
 

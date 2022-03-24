@@ -17,9 +17,6 @@ echo "Heatmap Order: $HEATMAPTAXON";
 echo "Heatmap Percentage: $HEATMAPVALUE";
 echo "metaMAG Output Directory: $OUTPUT"
 
-#test -d some_directory ; echo $? # is this a directory? 
-#test -f some_file.txt ; echo $? # is this a file?
-#test -r some_file.txt ; echo $? $ is this file readable?
 
 echo "###### metaMAG_visualisation_heatmap module: Updated 17/03/22 ######"
 
