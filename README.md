@@ -29,7 +29,8 @@ CGACATGTACACCGCGGACGATGTCACGCCCCGGCTGCTGAGCATCCTGCTCAGCGAGAT
 
 **3. Name of directory containing all bin files (.fasta) for a MG**
 
-Example of the directory:
+Example of the directory: 
+(Check .fa file names do not contain underscores)
 ```
 AcS5-100.fa  AcS5-118.fa  AcS5-16.fa  AcS5-34.fa  AcS5-51.fa  AcS5-69.fa  AcS5-86.fa
 AcS5-101.fa  AcS5-119.fa  AcS5-17.fa  AcS5-35.fa  AcS5-52.fa  AcS5-6.fa   AcS5-87.fa
