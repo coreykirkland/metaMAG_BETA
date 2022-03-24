@@ -198,8 +198,7 @@ metaMAG module: metaMAG_kofam.sh
 bash metaMAG_gene.sh -m <Metagenome Name> -k <Kofam Output> -o <Output Directory>
 ```
 metaMAG module: metaMAG_gene.sh  
--m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
--k: Kofam output file (two column file containing name and KO k number)  NOT REQUIRED??  
+-m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).   
 -o: Output directory (must be the same as used in previous module).  
 
 ##### Output:
