@@ -174,7 +174,7 @@ LMKALASELGVEMISIKCSDLMSKWYGESENRVADLLRTARERAPCILFMDEIDAVAKRRDMYTADDVTPRLLSILLSEM
 Histogram of MMseqs2 statistics.
 
 ## 3. metaMAG_kofam module:
-* Functionally annotates the representative protein family sequences from the MMseqs2 output - Kofam Scan.
+* Functionally annotates the representative protein family sequences from the MMseqs2 output (all MGs) - Kofam Scan.
 
 ##### Usage:
 ```
@@ -187,12 +187,16 @@ metaMAG module: metaMAG_kofam.sh
 -o: Output directory (must be the same as used in previous module).  
 
 #### Output:
-##### **Kofam Scan Output: Kofam_Scan_Results.txt**
+##### **Kofam Scan Output: Kofam_Scan_Results_K.txt**
 ```
-
+AcS5_NODE_1_193_GeneID=1_193    K22223
+AcS5_NODE_1_737_GeneID=1_737    K19267
+AcS5_NODE_1_929_GeneID=1_929    K02906
+AcS5_NODE_2_125_GeneID=2_125    K00036
+AcS5_NODE_2_125_GeneID=2_125    K00033
 ```
 ## 4. metaMAG_gene module:
-* Integrates gene family (GF) and KEGG Orthology (KO) with TPM data - R script (TPM.R).
+* Integrates gene family (GF) and KEGG Orthology (KO) with TPM data for each MG - R script (TPM.R).
 
 ##### Usage:
 ```
@@ -202,13 +206,43 @@ metaMAG module: metaMAG_gene.sh
 -m: Metagenome name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).   
 -o: Output directory (must be the same as used in previous module).  
 
-##### Output:
-(Output files)
-
+#### Output:
+##### **Number of Genes in each Gene Family: ClusterCount.tsv**
+```
+AcS5_NODE_1_1_GeneID=1_1        4
+AcS5_NODE_1_1001_GeneID=1_1001  1
+AcS5_NODE_1_1002_GeneID=1_1002  1
+AcS5_NODE_1_1003_GeneID=1_1003  1
+AcS5_NODE_1_1004_GeneID=1_1004  1
+```
+##### **Gene TPM Table: GeneTPM.tsv**
+```
+MG_GeneID       MG      GF      GF_Member       TPM
+AcS5_1_1        AcS5    AcS5_NODE_1_1_GeneID=1_1        AcS5_NODE_1_1_GeneID=1_1        0.799701032501215
+AcS5_1_10       AcS5    AcS5_NODE_899_26_GeneID=899_26  AcS5_NODE_1_10_GeneID=1_10      0.939016452285368
+AcS5_1_100      AcS5    AcS5_NODE_1261_19_GeneID=1261_19        AcS5_NODE_1_100_GeneID=1_1000.760084361188572
+AcS5_1_1000     AcS5    AcS5_NODE_10896_1_GeneID=10896_1        AcS5_NODE_1_1000_GeneID=1_1000      0.615710795376218
+```
+##### **Total TPM Table: TotalTPM.tsv**
+```
+GF      MG      TotalTPM
+AcS5_NODE_1_1_GeneID=1_1        AcS5    1.32258006388587
+AcS5_NODE_1_1001_GeneID=1_1001  AcS5    1.75218175472723
+AcS5_NODE_1_1002_GeneID=1_1002  AcS5    0.950105451485715
+AcS5_NODE_1_1003_GeneID=1_1003  AcS5    0.669220386321627
+```
+##### **Percent TPM Table: PercentTPM.tsv**
+```
+MG_KO   GF      MG      GF_Member       MG_GeneID       TPM     TotalTPM        Percent_GF KO       TotalTPM_KO     Percent_KO
+AcS5_K00003     AcS5_NODE_7239_6_GeneID=7239_6  AcS5    AcS5_NODE_414290_1_GeneID=414290_1 AcS5_414290_1    0.0764513265623911      124.074520173174        0.0616172655398432      K00003      148.897865278025        0.0513448103635599
+AcS5_K00003     AcS5_NODE_7239_6_GeneID=7239_6  AcS5    AcS5_NODE_197627_2_GeneID=197627_2 AcS5_197627_2    0.587999598156139       124.074520173174        0.47390841998458        K00003      148.897865278025        0.39490129496364
+AcS5_K00003     AcS5_NODE_270876_2_GeneID=270876_2      AcS5    AcS5_NODE_127325_1_GeneID=127325_1  AcS5_127325_1   0.214671274585787       0.535960944260959       40.0535294380076   K00003   148.897865278025        0.144173507246023
+AcS5_K00003     AcS5_NODE_7239_6_GeneID=7239_6  AcS5    AcS5_NODE_3071_27_GeneID=3071_27   AcS5_3071_27     0.744575611086526       124.074520173174        0.600103558770408       K00003      148.897865278025        0.500057948914336
+```
 
 
 ## 5. metaMAG_genome module:
-* Calculates the percentage of reads for a GF or KO (two separate tables) that belongs to a MAG in a metagenome.
+* Calculates the percentage of the reads for a GF or KO (two separate tables) that belong to a given MAG in within the MG.
 
 ##### Usage:
 ```
