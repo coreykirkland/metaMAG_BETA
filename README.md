@@ -286,7 +286,7 @@ K00012  AcS5_AcS5-1.fa  0.703786698087246
 K00014  AcS5_AcS5-1.fa  0.269474647403548
 K00015  AcS5_AcS5-1.fa  1.07734819375613
 ```
-## 6. metaMAG_strain module:
+## 6. metaMAG_strain module: NOT TESTED
 * Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
 * Integrates statistics with GFs and MAGs - R script.
 * Optional module - computationally expensive with large datasets.
@@ -303,8 +303,6 @@ metaMAG module: metaMAG_strain.sh
 -o: Output directory (must be the same as used in previous module).  
 
 ##### Output:
-(Output files)
-
 
 
 ## metaMAG Visualisation:  
