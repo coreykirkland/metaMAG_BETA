@@ -328,7 +328,7 @@ metaMAG module: metaMAG_visualisation_setup.sh
 -o: Output directory (must be the same as used in previous modules).  
 Ensure files are in the same location as created during metaMAG_genome module
 
-## 2. metaMAG_visualisation_barchart
+## 2a. metaMAG_visualisation_barchart
 * Produces a bar chart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
 * Requires MergedKOAll.tsv file from metaMAG_visualisation_setup.
 
@@ -341,7 +341,7 @@ metaMAG module: metaMAG_visualisation_barchart.sh
 -b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or MAG 
 -o: Output directory (must be the same as used in previous modules).  
 
-## 2. metaMAG_visualisation_heatmap
+## 2b. metaMAG_visualisation_heatmap
 * Produces a heatmap for MAGs from a given order using a database of selected KOs. 
 * Requires MergedGF.tsv and MergedKO.tsv files from metaMAG_visualisation_setup.
 
