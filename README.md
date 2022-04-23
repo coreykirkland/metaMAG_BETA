@@ -1,5 +1,5 @@
 # **metaMAG**
-### Integrating Metagenome (meta) and Metagenome-Assembled Genome (MAG) Data
+### Integrating Metagenome and Metagenome-Assembled Genome Data
 
 
 ## **Dependencies:**
@@ -253,11 +253,19 @@ metaMAG module: metaMAG_genome.sh
 -b: Bin directory - PATH to directory containing .fa files from binning step. (More details needed).  
 -o: Output directory (must be the same as used in previous module).  
 
-##### Output:
-(Output files)
+#### Output:
+##### **: MergedMAG.tsv**
+```
+Contig  MG      Bin     GeneID  MG_GeneID
+NODE_1  AcS5    AcS5-107.fa     1_170   AcS5_1_170
+NODE_1  AcS5    AcS5-107.fa     1_844   AcS5_1_844
+NODE_1  AcS5    AcS5-107.fa     1_609   AcS5_1_609
+NODE_1  AcS5    AcS5-107.fa     1_371   AcS5_1_371
+```
+##### **: MergedMAG.tsv**
+```
 
-
-
+```
 ## 6. metaMAG_strain module:
 * Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
 * Integrates statistics with GFs and MAGs - R script.
