@@ -19,7 +19,7 @@ echo "Metagenome Name (No spaces or special characters): $MG";
 # Note MG must be one word and contain no special characters (e.g. MG or MetagenomeName)
 echo "Alignment File: $ALIGNMENT";
 echo "Contig File : $CONTIG";
-echo "Number of Threads: $THREAD";
+echo "Number of Threads: $THREADS";
 echo "metaMAG Output Directory: $OUTPUT"
 
 
