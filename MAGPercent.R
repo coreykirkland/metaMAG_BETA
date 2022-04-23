@@ -1,6 +1,6 @@
 #!/bin/R Rscript
 
-# title: "MAGs" Updated: 09/09/21
+# title: "MAGs" Updated: 23/04/22
 
 # commmandArgs:
 Args = commandArgs(TRUE)
@@ -16,7 +16,7 @@ library(dplyr)
 # Read tables:
 MAGTable <- read.delim(MAGTable, header = FALSE, sep = "\t", col.names = "Col1") # from binning
 MAGTableUpdated <- read.delim(MAGTableUpdated, header = FALSE, sep = "\t", col.names = c("Contig", "GeneID")) # GFF
-PercentTPM <- read.delim(PercentTPM, sep = "\t", header = TRUE) # PercentTPM.tsv
+PercentTPM <- read.delim(PercentTPM, sep = "\t", header = TRUE, col.names = c("MG_KO","GF","MG","GF_Member","MG_GeneID","TPM","TotalTPM","Percent_GF","KO","TotalTPM_KO","Percent_KO")) # PercentTPM.tsv
 
 # Modify MAGTable:
 MAGTable <- separate(MAGTable, Col1, c("MG","bin", "k", "contig", "length", "l.no", "cov", "c.no"), sep = "_")
