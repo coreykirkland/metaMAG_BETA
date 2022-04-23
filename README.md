@@ -254,7 +254,7 @@ metaMAG module: metaMAG_genome.sh
 -o: Output directory (must be the same as used in previous module).  
 
 #### Output:
-##### **: MergedMAG.tsv**
+##### **: MG_MergedMAG.tsv**
 ```
 Contig  MG      Bin     GeneID  MG_GeneID
 NODE_1  AcS5    AcS5-107.fa     1_170   AcS5_1_170
@@ -262,9 +262,29 @@ NODE_1  AcS5    AcS5-107.fa     1_844   AcS5_1_844
 NODE_1  AcS5    AcS5-107.fa     1_609   AcS5_1_609
 NODE_1  AcS5    AcS5-107.fa     1_371   AcS5_1_371
 ```
-##### **: MergedMAG.tsv**
+##### **: MG_MAGPercent.tsv**
 ```
-
+MG_GeneID       MG_KO   GF      MG.x    GF_Member       TPM     TotalTPM        Percent_GF      KO      TotalTPM_KO     Percent_KO Contig  MG.y    Bin     GeneID
+AcS5_1_1000     AcS5_K03124     AcS5_NODE_10896_1_GeneID=10896_1        AcS5    AcS5_NODE_1_1000_GeneID=1_1000  0.615710795376218  78.394702775784 0.78539846899759        K03124  116.482527893902        0.528586395323631       NODE_1  AcS5    AcS5-107.fa        1_1000
+AcS5_1_1005     AcS5_K01055     AcS5_NODE_188393_5_GeneID=188393_5      AcS5    AcS5_NODE_1_1005_GeneID=1_1005  0.945928726662353  47.5940730729894        1.98749269727702        K01055  351.00768586659 0.269489462695662       NODE_1  AcS5    AcS5-107.fa        1_1005
+AcS5_1_1008     AcS5_K23356     AcS5_NODE_1893_7_GeneID=1893_7  AcS5    AcS5_NODE_1_1008_GeneID=1_1008  1.01441016647208  3.05806683998361 33.1716152573537        K23356  53.2377950342404        1.90543234523453        NODE_1  AcS5    AcS5-107.fa1_1008
+AcS5_1_1010     AcS5_K01689     AcS5_NODE_46788_4_GeneID=46788_4        AcS5    AcS5_NODE_1_1010_GeneID=1_1010  0.701871096053131  253.067067507372        0.277345884222049       K01689  314.499197362365        0.223171029350653       NODE_1  AcS5       AcS5-107.fa     1_1010
+```
+##### **: MG_MAGPercentGF.tsv**
+```
+GF      MG_Bin  GFPercent
+AcS5_NODE_100_123_GeneID=100_123        AcS5_AcS5-1.fa  4.01331090509955
+AcS5_NODE_10024_10_GeneID=10024_10      AcS5_AcS5-1.fa  5.06239195109573
+AcS5_NODE_100378_3_GeneID=100378_3      AcS5_AcS5-1.fa  9.32307468207402
+AcS5_NODE_100573_3_GeneID=100573_3      AcS5_AcS5-1.fa  0.773759371111648
+```
+##### **: MG_MAGPercentKO.tsv**
+```
+KO      MG_Bin  KOPercent
+K00003  AcS5_AcS5-1.fa  0.500057948914336
+K00012  AcS5_AcS5-1.fa  0.703786698087246
+K00014  AcS5_AcS5-1.fa  0.269474647403548
+K00015  AcS5_AcS5-1.fa  1.07734819375613
 ```
 ## 6. metaMAG_strain module:
 * Calculates population genetic statistics (SNVs, nucleotide diversity, pNpS ratios) - inStrain.
