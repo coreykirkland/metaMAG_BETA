@@ -302,8 +302,6 @@ metaMAG module: metaMAG_strain.sh
 -t: Number of threads required for inStrain.  
 -o: Output directory (must be the same as used in previous module).  
 
-##### Output:
-
 
 ## metaMAG Visualisation:  
 * Scripts for the analysis and visualisation of data from the **metaMAG_genome** module
@@ -327,6 +325,12 @@ bash metaMAG_visualisation_setup.sh -o <Output Directory>
 metaMAG module: metaMAG_visualisation_setup.sh  
 -o: Output directory (must be the same as used in previous modules).  
 Ensure files are in the same location as created during metaMAG_genome module
+
+#### Output:
+##### 
+```
+
+```
 
 ## 2a. metaMAG_visualisation_barchart
 * Produces a bar chart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
