@@ -14,7 +14,7 @@ echo "metaMAG: $0"
 echo "metaMAG Output Directory: $OUTPUT"
 
 
-echo "###### metaMAG_visualisation_setup module: Updated 17/03/22 ######"
+echo "###### metaMAG_visualisation_setup module: Updated 30/04/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/
