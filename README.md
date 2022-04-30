@@ -318,6 +318,8 @@ AcS1-10	Surface	d__Bacteria	p__Desulfobacterota_B	c__Binatia	o__Binatales	f__Bin
 AcS1-11	Surface	d__Bacteria	p__Verrucomicrobiota	c__Verrucomicrobiae	o__Pedosphaerales	f__Pedosphaeraceae	g__UBA11358	s__
 AcS1-12	Surface	d__Bacteria	p__Proteobacteria	c__Gammaproteobacteria	o__SLND01	f__	g__	s__
 ```
+MAG_Taxonomy.tsv SelectedKOs.tsv AllKOs.tsv
+
 ##### Usage:
 ```
 bash metaMAG_visualisation_setup.sh -o <Output Directory>
