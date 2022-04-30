@@ -1,6 +1,6 @@
 #!/bin/R Rscript
 
-# title: "MAGs" Updated: 23/04/22
+# title: "MAGs" Updated: 30/04/22
 
 # commmandArgs:
 Args = commandArgs(TRUE)
@@ -36,11 +36,11 @@ MAGPercent$Bin[is.na.data.frame(MAGPercent$Bin)] <- "Unbinned"
 write.table(MAGPercent, file = paste(Output, 'MAGPercent.tsv', sep = ""), quote = FALSE, sep = '\t', col.names = TRUE, row.names = FALSE)
 
 # Calculate percentages for GF:
-MAGPercentGF <- aggregate(x = MAGPercent$Percent_GF, by = list(MAGPercent$GF, MAGPercent$MG.x, MAGPercent$Bin), FUN = sum)
-MAGPercentGF <- data.frame(GF = MAGPercentGF$Group.1, MG_Bin = paste(MAGPercentGF$Group.2, MAGPercentGF$Group.3, sep = "_"), GFPercent = MAGPercentGF$x)
+MAGPercentGF <- aggregate(x = MAGPercent$Percent_GF, by = list(MAGPercent$GF, MAGPercent$MG.x, MAGPercent$Bin, MAGPercent$MG_KO), FUN = sum)
+MAGPercentGF <- data.frame(GF = MAGPercentGF$Group.1, MG = MAGPercentGF$Group.2, MAG = MAGPercentGF$Group.3, MG_KO = MAGPercentGF$Group.4, GFPercent = MAGPercentGF$x)
 write.table(MAGPercentGF, file = paste(Output, 'MAGPercentGF.tsv', sep = ""), quote = FALSE, sep = '\t', col.names = TRUE, row.names = FALSE)
 
 # Calculate percentages for KO:
 MAGPercentKO <- aggregate(x = MAGPercent$Percent_KO, by = list(MAGPercent$KO, MAGPercent$MG.x, MAGPercent$Bin), FUN = sum)
-MAGPercentKO <- data.frame(KO = MAGPercentKO$Group.1, MG_Bin = paste(MAGPercentKO$Group.2, MAGPercentKO$Group.3, sep = "_"), KOPercent = MAGPercentKO$x)
+MAGPercentKO <- data.frame(KO = MAGPercentKO$Group.1, MG = MAGPercentKO$Group.2, MAG = MAGPercentKO$Group.3, KOPercent = MAGPercentKO$x)
 write.table(MAGPercentKO, file = paste(Output, 'MAGPercentKO.tsv', sep = ""), quote = FALSE, sep = '\t', col.names = TRUE, row.names = FALSE)
