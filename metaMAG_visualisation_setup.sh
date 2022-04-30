@@ -34,6 +34,6 @@ cat "$metaMAG"/metaMAG/*_MAGPercentKO.tsv > "$metaMAG"/metaMAG/Genome_Visualisat
 GV_Output="$metaMAG"/metaMAG/Genome_Visualisation/
 
 # Rscript:
-Rscript GenomeVisualisationSetup.R "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentGF1 "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentKO1 MAG_Taxonomy.tsv SelectedKOs.tsv AllKOs.tsv "$GV_Output
+Rscript GenomeVisualisationSetup.R "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentGF1 "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentKO1 MAG_Taxonomy.tsv SelectedKOs.tsv AllKOs.tsv "$GV_Output"
 
 # Outputs: MergedGF.tsv MergedKO.tsv MergedGFAll.tsv MergedKOAll.tsv
