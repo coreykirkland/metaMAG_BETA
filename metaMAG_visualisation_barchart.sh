@@ -18,7 +18,7 @@ echo "Barchart Taxon: $BARCHARTFILL";
 echo "metaMAG Output Directory: $OUTPUT"
 
 
-echo "###### metaMAG_visualisation_barchart module: Updated 17/03/22 ######"
+echo "###### metaMAG_visualisation_barchart module: Updated 30/04/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/
@@ -32,3 +32,5 @@ ROutput="$metaMAG"/metaMAG/Genome_Visualisation/
 Rscript GenomeVisualisationBarchart.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedKOAll.tsv "$BARCHARTKO" "$BARCHARTFILL" "$ROutput"
 
 # Outputs: BarchartKO.tsv BarchartKO.tsv
+
+echo "### END OF MODULE ###"

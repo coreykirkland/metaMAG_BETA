@@ -32,3 +32,5 @@ ROutput="$metaMAG"/metaMAG/Genome_Visualisation/
 Rscript GenomeVisualisationHeatmap.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedGF.tsv "$metaMAG"/metaMAG/Genome_Visualisation/MergedKO.tsv "$HEATMAPTAXON" "$HEATMAPVALUE" "$ROutput"
 
 # Outputs: HeatmapGF.tsv HeatmapGF.pdf HeatmapKO.tsv HeatmapKO.pdf
+
+echo "### END OF MODULE ###"

@@ -42,3 +42,5 @@ GV_Output="$metaMAG"/metaMAG/Genome_Visualisation/
 Rscript GenomeVisualisationSetup.R "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentGF.tsv "$metaMAG"/metaMAG/Genome_Visualisation/Combined_MAGPercentKO.tsv MAG_Taxonomy.tsv SelectedKOs.tsv AllKOs.tsv "$GV_Output"
 
 # Outputs: MergedGF.tsv MergedKO.tsv MergedGFAll.tsv MergedKOAll.tsv
+
+echo "### END OF MODULE ###"
