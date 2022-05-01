@@ -47,10 +47,10 @@ CATCGTGGCGATCGCGCTTTTGGGAAGCGGTTTTTCGCTTGGTTGGAGCGCTGGCAGTAA
 ## **Modules:**
 
 #### Modules:
-![Modules_1](https://github.com/coreykirkland/metaMAG_test/blob/e9061dbffec80597f34860dab92594fa9b759654/metaMAG.drawio(2).svg)  
+![Modules_1](https://github.com/coreykirkland/metaMAG_test/blob/main/metaMAG.drawio(2).svg)  
 
 #### Pipeline:
-![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/33e65ee534199bd91a69a94bc4d89b915a0b2cae/metaMAG.drawio(1).svg)  
+![pipeline_1](https://github.com/coreykirkland/metaMAG_test/blob/main/metaMAG.drawio(1).svg)  
 
 
 
