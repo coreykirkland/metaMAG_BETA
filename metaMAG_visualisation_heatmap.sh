@@ -26,7 +26,7 @@ metaMAG="$OUTPUT"/metaMAG/
 ###################################
 
 # Rscript output:
-ROutput="$metaMAG"/metaMAG/Genome_Visualisation/
+ROutput="$metaMAG"/metaMAG/Genome_Visualisation/"$HEATMAPTAXON"_"$HEATMAPVALUE"_
 
 # Rscript:
 Rscript GenomeVisualisationHeatmap.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedGF.tsv "$metaMAG"/metaMAG/Genome_Visualisation/MergedKO.tsv "$HEATMAPTAXON" "$HEATMAPVALUE" "$ROutput"

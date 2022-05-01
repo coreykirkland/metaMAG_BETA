@@ -26,7 +26,7 @@ metaMAG="$OUTPUT"/metaMAG/
 ###################################
 
 # Rscript output:
-ROutput="$metaMAG"/metaMAG/Genome_Visualisation/
+ROutput="$metaMAG"/metaMAG/Genome_Visualisation/"$BARCHARTKO"_"$BARCHARTFILL"_
 
 # Rscript:
 Rscript GenomeVisualisationBarchart.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedKOAll.tsv "$BARCHARTKO" "$BARCHARTFILL" "$ROutput"
