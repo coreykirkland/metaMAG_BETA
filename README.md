@@ -185,6 +185,7 @@ metaMAG module: metaMAG_kofam.sh
 -p: Profile (required for Kofam Scan - see https://github.com/takaram/kofam_scan)  
 -t: Number of threads.  
 -o: Output directory (must be the same as used in previous module).  
+Note: All arguments required to successfully run the module.
 
 #### Output:
 ##### **Kofam Scan Output: Kofam_Scan_Results_K.txt**
@@ -252,6 +253,7 @@ metaMAG module: metaMAG_genome.sh
 -m: Metagenome Name (must be one word with no spaces or special characters, e.g. MG1, and ensure the name is the same as the previous module).  
 -b: Bin directory - PATH to directory containing .fa files from binning step. (More details needed).  
 -o: Output directory (must be the same as used in previous module).  
+Note: All arguments required to successfully run the module.
 
 #### Output:
 ##### **Merged MAG Table: MG_MergedMAG.tsv**
@@ -293,7 +295,7 @@ K00015  AcS5_AcS5-1.fa  1.07734819375613
 ## 1. metaMAG_visualisation_setup
 * Combines data produced during metaMAG_genome with KEGG information (selected KOs and all KOs from the KEGG database) and MAG classification.
 * Run this script once to setup files required for the below visualisation scripts.
-* Requires a table of MAG classification - see below and table provided:
+* Requires a table of MAG classification (named MAG_Taxonomy.tsv in working direcory) - see below for example table provided:
 
 ```
 MAG	Depth	Bacteria	Phylum	Class	Order	Family	Genus	Species
@@ -309,13 +311,49 @@ MAG_Taxonomy.tsv SelectedKOs.tsv AllKOs.tsv
 bash metaMAG_visualisation_setup.sh -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_setup.sh  
--o: Output directory (must be the same as used in previous modules).  
+-o: Output directory (must be the same as used in all previous modules).  
 Ensure files are in the same location as created during metaMAG_genome module
+Note: All arguments required to successfully run the module.
 
 #### Output:
-##### 
+* MergedGF.tsv and MergedKO.tsv (selected KOs). Used in heatmap script.
+* MergedGFAll.tsv and MergedKOAll.tsv (All KOs). Used in bar chart script.
+##### MergedGF.tsv
 ```
+KO      MAG     GF      GFPercent       MG      Depth   Bacteria        Phylum  Class   Order   FamilyGenus    Species Pathway.Name    Function        KO_Title        Gene
+K00148  AcS5-27 AcS5_NODE_84326_4_GeneID=84326_4        3.2350060715427 AcS5    Surface d__Bacteria   p__Verrucomicrobiota     c__Verrucomicrobiae     o__Pedosphaerales       f__Pedosphaeraceae      g__UBA11358    s__     Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
+K00148  AcS5-41 AcS5_NODE_84326_4_GeneID=84326_4        2.29795616412416        AcS5    Surface d__Bacteria    p__Acidobacteriota      c__Acidobacteriae       o__Acidobacteriales     f__SCQP01       g__   s__      Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
+K00148  Unbinned        AcS5_NODE_84326_4_GeneID=84326_4        77.5854913091961        AcS5    NA    NA       NA      NA      NA      NA      NA      NA      Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
+K00148  AcS5-94 AcS5_NODE_84326_4_GeneID=84326_4        1.17988655220708        AcS5    Surface d__Bacteria    p__Firmicutes_E c__Thermaerobacteria    o__     f__     g__     s__     Carbon Metabolism     CH2O_Oxidation   fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
 
+```
+##### MergedKO.tsv
+```
+K00148  Unbinned        AcS5_NODE_84326_4_GeneID=84326_4        77.5854913091961        AcS5    NA    NA       NA      NA      NA      NA      NA      NA      Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
+K00148  AcS5-94 AcS5_NODE_84326_4_GeneID=84326_4        1.17988655220708        AcS5    Surface d__Bacteria    p__Firmicutes_E c__Thermaerobacteria    o__     f__     g__     s__     Carbon Metabolism     CH2O_Oxidation   fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
+[s03ck1@maxlogin1 Genome_Visualisation]$ ^C
+[s03ck1@maxlogin1 Genome_Visualisation]$ head -n 5 MergedKO.tsv
+KO      MAG     MG      KOPercent       Depth   Bacteria        Phylum  Class   Order   Family  Genus Species  Pathway.Name    Function        KO_Title        Gene
+K00148  AcS5-78 AcS5    6.72294734141631        Surface d__Bacteria     p__Proteobacteria       c__Gammaproteobacteria o__Steroidobacterales   f__Steroidobacteraceae  g__     s__     Carbon Metabolism     CH2O_Oxidation   fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
+K00148  AcS5-94 AcS5    1.17988655220708        Surface d__Bacteria     p__Firmicutes_E c__Thermaerobacteria   o__     f__     g__     s__     Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
+K00148  AcS5-15 AcS5    4.27127423685424        Surface d__Bacteria     p__Acidobacteriota      c__Acidobacteriae      o__Acidobacteriales     f__SCQP01       g__     s__     Carbon Metabolism       CH2O_Oxidation fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
+K00148  AcS5-99 AcS5    1.48936499213025        Surface d__Bacteria     p__Actinobacteriota     c__Thermoleophilia     o__Solirubrobacterales  f__Solirubrobacteraceae g__Palsa-465    s__     Carbon Metabolism      CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
+```
+##### MergedGFAll.tsv
+```
+KO      MAG     GF      GFPercent       MG      Depth   Bacteria        Phylum  Class   Order   FamilyGenus    Species KO_Details
+K00003  AcS5-17 AcS5_NODE_265058_1_GeneID=265058_1      5.45454975319319        AcS5    Surface d__Bacteria    p__Firmicutes   c__Bacilli      o__Bacillales   f__Bacillaceae_A        g__Bacillus_BD  s__   hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-97 AcS5_NODE_7239_6_GeneID=7239_6  0.346748694314834       AcS5    Surface d__Bacteria   p__Actinobacteriota      c__Acidimicrobiia       o__Acidimicrobiales     f__RAAP-2       g__Palsa-459  s__      hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-61 AcS5_NODE_7239_6_GeneID=7239_6  0.934773488960412       AcS5    Surface d__Bacteria   p__Actinobacteriota      c__Thermoleophilia      o__Gaiellales   f__Gaiellaceae  g__PALSA-600    s__   hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-57 AcS5_NODE_7239_6_GeneID=7239_6  0.524984929091241       AcS5    Surface d__Bacteria   p__Actinobacteriota      c__Actinomycetia        o__Streptosporangiales  f__Streptosporangiaceae g__Palsa-506   s__     hom; homoserine dehydrogenase [EC:1.1.1.3]
+```
+##### MergedKOAll.tsv
+```
+KO      MAG     MG      KOPercent       Depth   Bacteria        Phylum  Class   Order   Family  Genus Species  KO_Details
+K00003  AcS5-117        AcS5    0.0675447720104874      Surface d__Bacteria     p__Bacteroidota c__Bacteroidia o__Chitinophagales      f__Chitinophagaceae     g__UBA8621      s__     hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-39 AcS5    1.69546715733237        Surface d__Bacteria     p__Actinobacteriota     c__Acidimicrobiia      o__Acidimicrobiales     f__RAAP-2       g__RAAP-2       s__     hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-111        AcS5    0.194651196371218       Surface d__Bacteria     p__Eremiobacterota    c__Eremiobacteria        o__UBP12        f__UBA5184      g__     s__     hom; homoserine dehydrogenase [EC:1.1.1.3]
+K00003  AcS5-9  AcS5    1.0407462623531 Surface d__Bacteria     p__Actinobacteriota     c__Thermoleophilia     o__Solirubrobacterales  f__Solirubrobacteraceae g__Palsa-744    s__     hom; homoserine dehydrogenase [EC:1.1.1.3]
 ```
 
 ## 2a. metaMAG_visualisation_barchart
@@ -328,8 +366,9 @@ bash metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <O
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
 -k: KEGG k-number (e.g. KO1944).  
--b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or MAG 
--o: Output directory (must be the same as used in previous modules).  
+-b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or MAG (i.e. column name). 
+-o: Output directory (must be the same as used in all previous modules).  
+Note: All arguments required to successfully run the module.
 
 ## 2b. metaMAG_visualisation_heatmap
 * Produces a heatmap for MAGs from a given order using a database of selected KOs. 
@@ -337,10 +376,10 @@ metaMAG module: metaMAG_visualisation_barchart.sh
 
 ##### Usage:
 ```
-bash etaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
+bash metaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
 ```
 metaMAG module: metaMAG_visualisation_heatmap.sh  
 -t: Name of order based on MAG classification table (e.g. o__Solirubrobacterales)  
 -p: Include GFs/KOs with at least one MAG greater than "percentage" (e.g. 50)  
--o: Output directory (must be the same as used in previous modules).  
-
+-o: Output directory (must be the same as used in all previous modules).  
+Note: All arguments required to successfully run the module.
