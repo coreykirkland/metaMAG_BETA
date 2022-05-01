@@ -352,7 +352,7 @@ K00003  AcS5-9  AcS5    1.0407462623531 Surface d__Bacteria     p__Actinobacteri
 ```
 
 ## 2a. metaMAG_visualisation_barchart
-* Produces a bar chart for a given KO (e.g. KO1944) and taxonomy level (e.g. Phylum)
+* Produces a bar chart for a given KO (e.g. KO1944). Default taxonomic level is Order. This can easily be changed to another column name in the GenomeVisualisationBarchart.R file (see note within this file).
 * Requires MergedKOAll.tsv file from metaMAG_visualisation_setup.
 
 ##### Usage:
@@ -361,7 +361,7 @@ bash metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <O
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
 -k: KEGG k-number (e.g. KO1944).  
--b: Taxon level (based on column name). E.g. Domain Phylum Class Order Family Genus Species or MAG (i.e. column name). 
+-f: Prefix of the output name (e.g. KO1944_Order)
 -o: Output directory (must be the same as used in all previous modules).  
 Note: All arguments required to successfully run the module.
 
