@@ -329,10 +329,6 @@ K00148  AcS5-94 AcS5_NODE_84326_4_GeneID=84326_4        1.17988655220708        
 ```
 ##### MergedKO.tsv
 ```
-K00148  Unbinned        AcS5_NODE_84326_4_GeneID=84326_4        77.5854913091961        AcS5    NA    NA       NA      NA      NA      NA      NA      NA      Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
-K00148  AcS5-94 AcS5_NODE_84326_4_GeneID=84326_4        1.17988655220708        AcS5    Surface d__Bacteria    p__Firmicutes_E c__Thermaerobacteria    o__     f__     g__     s__     Carbon Metabolism     CH2O_Oxidation   fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
-[s03ck1@maxlogin1 Genome_Visualisation]$ ^C
-[s03ck1@maxlogin1 Genome_Visualisation]$ head -n 5 MergedKO.tsv
 KO      MAG     MG      KOPercent       Depth   Bacteria        Phylum  Class   Order   Family  Genus Species  Pathway.Name    Function        KO_Title        Gene
 K00148  AcS5-78 AcS5    6.72294734141631        Surface d__Bacteria     p__Proteobacteria       c__Gammaproteobacteria o__Steroidobacterales   f__Steroidobacteraceae  g__     s__     Carbon Metabolism     CH2O_Oxidation   fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46]  fdhA
 K00148  AcS5-94 AcS5    1.17988655220708        Surface d__Bacteria     p__Firmicutes_E c__Thermaerobacteria   o__     f__     g__     s__     Carbon Metabolism       CH2O_Oxidation  fdhA; glutathione-independent formaldehyde dehydrogenase [EC:1.2.1.46] fdhA
