@@ -357,7 +357,7 @@ K00003  AcS5-9  AcS5    1.0407462623531 Surface d__Bacteria     p__Actinobacteri
 
 ##### Usage:
 ```
-bash metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -b <Taxon Level> -o <Output Directory>
+bash metaMAG_visualisation_barchart.sh -k <KEGG K-Number> -f <Output Prefix> -o <Output Directory>
 ```
 metaMAG module: metaMAG_visualisation_barchart.sh  
 -k: KEGG k-number (e.g. KO1944).  
