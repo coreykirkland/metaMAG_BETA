@@ -26,8 +26,8 @@ BarchartDF <- na.omit(BarchartDF)
 write.table(BarchartDF, file = paste(Output, 'BarchartKO.tsv', sep = ""), sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE)
 
 
-##### For another taxonomic level change BarchartDF$Order to BarchartDF$Phylum for example #####
-BarchartDF <- data.frame(KO = BarchartDF$KO, MG = BarchartDF$MG, Taxon = BarchartDF$Order, KOPercent = BarchartDF$KOPercent) 
+##### For another taxonomic level change BarchartDF$Phylum to BarchartDF$Class for example #####
+BarchartDF <- data.frame(KO = BarchartDF$KO, MG = BarchartDF$MG, Taxon = BarchartDF$Phylum, KOPercent = BarchartDF$KOPercent) 
 #####
 
 
