@@ -32,5 +32,5 @@ BarchartDF <- data.frame(KO = BarchartDF$KO, MG = BarchartDF$MG, Taxon = Barchar
 
 
 pdf(file = paste(Output, 'BarchartKO.pdf', sep = ""), paper = "a4")
-ggplot(BarchartDF, aes(fill = Taxon, x = MG)) + geom_bar(colour = "white", size = 0.01) + xlab("Metagenome") + ylab("% of mapped reads") + theme(axis.text.x = element_text(angle = 45, hjust=1, vjust=1)) + labs(fill='Taxon') +scale_y_continuous(limits=c(0,100))
+ggplot(BarchartDF, aes(fill = Taxon, x = MG)) + geom_bar(colour = "white", size = 0.01) + xlab("Metagenome") + ylab("% of mapped reads") + theme(axis.text.x = element_text(angle = 45, hjust=1, vjust=1)) + labs(fill='Taxon') +scale_y_continuous(limits=c(0,100)) + theme(legend.position="bottom") + guides(fill=guide_legend(ncol=3))
 dev.off()
