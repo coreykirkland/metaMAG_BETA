@@ -352,7 +352,7 @@ K00003  AcS5-9  AcS5    1.0407462623531 Surface d__Bacteria     p__Actinobacteri
 ```
 
 ## 2a. metaMAG_visualisation_barchart
-* Produces a bar chart for a given KO (e.g. KO1944). Default taxonomic level is Order. This can easily be changed to another column name in the GenomeVisualisationBarchart.R file (see note within this file).
+* Produces a bar chart for a given KO (e.g. KO1944). Default taxonomic level is Phylum. This can easily be changed to another column name in the GenomeVisualisationBarchart.R file (see note within this file).
 * Requires MergedKOAll.tsv file from metaMAG_visualisation_setup.
 
 ##### Usage:
