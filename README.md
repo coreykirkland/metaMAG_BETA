@@ -368,13 +368,15 @@ Note: All arguments required to successfully run the module.
 ## 2b. metaMAG_visualisation_heatmap
 * Produces a heatmap for MAGs from a given order using a database of selected KOs. 
 * Requires MergedGF.tsv and MergedKO.tsv files from metaMAG_visualisation_setup.
-
+* Shows only columns with at least one row above a specified percentage. Standard percentages set at >50% for GF and >10% for KO. These can be modified easily in the GenomeVisualisationHeatmap.R script (see comments in script).
+ 
 ##### Usage:
 ```
-bash metaMAG_visualisation_heatmap.sh -t <Order Name> -p <Greater Than Percentage> -o <Output Directory> 
+bash metaMAG_visualisation_heatmap.sh -t <Order Name> -g <GF Output Prefix> -k <KO Output Prefix> -o <Output Directory> 
 ```
 metaMAG module: metaMAG_visualisation_heatmap.sh  
 -t: Name of order based on MAG classification table (e.g. o__Solirubrobacterales)  
--p: Include GFs/KOs with at least one MAG greater than "percentage" (e.g. 50)  
+-g: Prefix of the GF output files  
+-k: Prefix of the KO output files
 -o: Output directory (must be the same as used in all previous modules).  
 Note: All arguments required to successfully run the module.
