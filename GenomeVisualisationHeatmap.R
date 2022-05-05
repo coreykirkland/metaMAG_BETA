@@ -39,7 +39,7 @@ MergedGF2 <- unique(MergedGF2)
 MergedGF2 <- spread(MergedGF2, Pathway_Fun_KO_GF, GFPercent)
 MergedGF2[is.na(MergedGF2)] <- 0
 MergedGF2 <- data.frame(MergedGF2, row.names = 1)
-write.table(MergedGF2, file = paste(OutputGF, 'HeatmapGF.tsv', sep = "_"), sep = "\t", quote = FALSE, col.names = TRUE, row.names = FALSE)
+write.table(MergedGF2, file = paste(OutputGF, 'HeatmapGF.tsv', sep = ""), sep = "\t", quote = FALSE, col.names = TRUE, row.names = FALSE)
 MatGF <- as.matrix(MergedGF2)
 
 KOInt <- data.frame(Pathway_Fun_KO_GF = MergedGF1$Pathway_Fun_KO_GF, Pathway_Function_KO = paste(MergedGF1$Pathway.Name, MergedGF1$Function, MergedGF1$KO, MergedGF1$KO_Title, sep = "_"), KO_Title = MergedGF1$KO_Title, Pathway = MergedGF1$Pathway.Name, Gene = MergedGF1$Gene)
@@ -56,7 +56,7 @@ col_fun <- colorRamp2(c(0,1,100), c("grey96", "white", "red"))
 
 htGF = Heatmap(MatGF, col = col_fun, name = "%", border = FALSE, cluster_rows = FALSE, cluster_columns = FALSE, show_column_names = FALSE, show_row_names = FALSE, row_split = Family_Genus[,3], column_split = KOInt[,5], row_title_rot = 0, column_title_rot = 90, column_title_gp = gpar(fontsize = 8), row_title_gp = gpar(fontsize = 8), row_order = sort(rownames(MatGF)), column_order = sort(colnames(MatGF)))
 
-pdf(file = paste(OutputGF, 'HeatmapGF.pdf', sep = "_"), width = 12, height = 10, paper = "a4r")
+pdf(file = paste(OutputGF, 'HeatmapGF.pdf', sep = ""), width = 12, height = 10, paper = "a4r")
 draw(htGF, padding = unit(c(0.5,0.5,2,0.5), "cm"))
 dev.off()
 
@@ -78,7 +78,7 @@ MergedKO2 <- unique(MergedKO2)
 MergedKO2 <- spread(MergedKO2, Pathway_Fun_KO, KOPercent)
 MergedKO2[is.na(MergedKO2)] <- 0
 MergedKO2 <- data.frame(MergedKO2, row.names = 1)
-write.table(MergedKO2, file = paste(OutputKO, 'HeatmapKO.tsv', sep = "_"), sep = "\t", quote = FALSE, col.names = TRUE, row.names = FALSE)
+write.table(MergedKO2, file = paste(OutputKO, 'HeatmapKO.tsv', sep = ""), sep = "\t", quote = FALSE, col.names = TRUE, row.names = FALSE)
 MatKO <- as.matrix(MergedKO2)
 
 KOInt_KO <- data.frame(Pathway_Fun_KO = MergedKO1$Pathway_Fun_KO, Pathway_Function_KO = paste(MergedKO1$Pathway.Name, MergedKO1$Function, MergedKO1$KO, MergedKO1$KO_Title, sep = "_"), KO_Title = MergedKO1$KO_Title, Pathway = MergedKO1$Pathway.Name, Gene = MergedKO1$Gene)
@@ -95,6 +95,6 @@ col_fun <- colorRamp2(c(0,1,100), c("grey96", "white", "red"))
 
 htKO = Heatmap(MatKO, col = col_fun, name = "%", border = FALSE, cluster_rows = FALSE, cluster_columns = FALSE, show_column_names = FALSE, show_row_names = FALSE, row_split = Family_Genus_KO[,3], column_split = KOInt_KO[,5], row_title_rot = 0, column_title_rot = 90, column_title_gp = gpar(fontsize = 8), row_title_gp = gpar(fontsize = 8), row_order = sort(rownames(MatKO)), column_order = sort(colnames(MatKO)))
 
-pdf(file = paste(OutputKO, 'HeatmapKO.pdf', sep = "_"), width = 12, height = 10, paper = "a4r")
+pdf(file = paste(OutputKO, 'HeatmapKO.pdf', sep = ""), width = 12, height = 10, paper = "a4r")
 draw(htKO, padding = unit(c(0.5,0.5,2,0.5), "cm"))
 dev.off()
