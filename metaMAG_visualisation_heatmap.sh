@@ -3,22 +3,24 @@
 	set -u
 	set -o pipefail
 
-while getopts t:p:o: flag
+while getopts t:g:k:o: flag
 do
 	case "${flag}" in
 		t) HEATMAPTAXON=${OPTARG};;
-		p) HEATMAPVALUE=${OPTARG};;
+		g) GFPREFIX=${OPTARG};;
+		k) KOPREFIX=${OPTARG};;
 		o) OUTPUT=${OPTARG};;
 	esac
 done
 
 echo "metaMAG: $0"
 echo "Heatmap Order: $HEATMAPTAXON";
-echo "Heatmap Percentage: $HEATMAPVALUE";
+echo "GF Output Prefix: $GFPREFIX";
+echo "KO Output Prefix: $KOPREFIX";
 echo "metaMAG Output Directory: $OUTPUT"
 
 
-echo "###### metaMAG_visualisation_heatmap module: Updated 17/03/22 ######"
+echo "###### metaMAG_visualisation_heatmap module: Updated 05/05/22 ######"
 
 # Variables:
 metaMAG="$OUTPUT"/metaMAG/
@@ -26,10 +28,11 @@ metaMAG="$OUTPUT"/metaMAG/
 ###################################
 
 # Rscript output:
-ROutput="$metaMAG"/metaMAG/Genome_Visualisation/"$HEATMAPTAXON"_"$HEATMAPVALUE"_
+ROutputGF="$metaMAG"/metaMAG/Genome_Visualisation/"$GFPREFIX"_
+ROutputKO="$metaMAG"/metaMAG/Genome_Visualisation/"$KOPREFIX"_
 
 # Rscript:
-Rscript GenomeVisualisationHeatmap.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedGF.tsv "$metaMAG"/metaMAG/Genome_Visualisation/MergedKO.tsv "$HEATMAPTAXON" "$HEATMAPVALUE" "$ROutput"
+Rscript GenomeVisualisationHeatmap.R "$metaMAG"/metaMAG/Genome_Visualisation/MergedGF.tsv "$metaMAG"/metaMAG/Genome_Visualisation/MergedKO.tsv "$HEATMAPTAXON" "$ROutputGF" "$ROutputKO"
 
 # Outputs: HeatmapGF.tsv HeatmapGF.pdf HeatmapKO.tsv HeatmapKO.pdf
 
