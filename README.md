@@ -1,4 +1,4 @@
-# **metaMAG**
+# **metaMAG (BETA)**
 ### Integrating Metagenome and Metagenome-Assembled Genome Data
 
 
